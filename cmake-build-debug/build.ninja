@@ -55,6 +55,12 @@ build CMakeFiles/templates_practice.dir/chapter4/variadic_templates_4.1.cpp.obj:
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter4
 
+build CMakeFiles/templates_practice.dir/chapter4/fold_experssions.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter4/fold_experssions.cpp || cmake_object_order_depends_target_templates_practice
+  DEP_FILE = CMakeFiles\templates_practice.dir\chapter4\fold_experssions.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\templates_practice.dir
+  OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter4
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target templates_practice
@@ -63,7 +69,7 @@ build CMakeFiles/templates_practice.dir/chapter4/variadic_templates_4.1.cpp.obj:
 #############################################
 # Link the executable templates_practice.exe
 
-build templates_practice.exe: CXX_EXECUTABLE_LINKER__templates_practice_Debug CMakeFiles/templates_practice.dir/chapter4/variadic_templates_4.1.cpp.obj
+build templates_practice.exe: CXX_EXECUTABLE_LINKER__templates_practice_Debug CMakeFiles/templates_practice.dir/chapter4/variadic_templates_4.1.cpp.obj CMakeFiles/templates_practice.dir/chapter4/fold_experssions.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\templates_practice.dir
