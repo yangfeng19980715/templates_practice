@@ -105,7 +105,8 @@ namespace ch4_1 {
 }
 
 int
-main()
+//main()
+main_variadic_templates()
 {
     auto pt = ch4_1::Print3{};
     pt.test_print();
