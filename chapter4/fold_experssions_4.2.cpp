@@ -21,7 +21,8 @@ namespace ch4_2 {
 }
 
 int
-main()
+//main()
+main_fold_expressions()
 {
 
     return 0;

@@ -109,6 +109,8 @@ main()
 {
     auto pt = ch4_1::Print3{};
     pt.test_print();
+    
+    cout << "hello, variadic_templates" << endl;
 
     return 0;
 }
