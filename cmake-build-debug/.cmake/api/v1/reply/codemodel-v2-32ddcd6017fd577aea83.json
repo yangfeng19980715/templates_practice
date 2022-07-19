@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/yangfeng/CLionProjects/templates_practice/cmake-build-debug",
-		"source" : "C:/Users/yangfeng/CLionProjects/templates_practice"
+		"build" : "D:/jetbrainsProj/clionProj/templates_practice/cmake-build-debug",
+		"source" : "D:/jetbrainsProj/clionProj/templates_practice"
 	},
 	"version" : 
 	{
