@@ -1,6 +1,6 @@
 # ninja log v5
 3	1050	6793092143376540	CMakeFiles/templates_practice.dir/ch_1_function_templates.cpp.obj	294b5cf841ba5b24
-895	1038	6798381478974740	templates_practice.exe	eff25f0e53182c55
+967	1156	6799150015355828	templates_practice.exe	e2758990f0d0b994
 38	1556	6799006896099114	CMakeFiles/templates_practice.dir/chapter1/overload_function_template_1.5.cpp.obj	d4f6eadceef64726
 1556	3003	6799006910543753	CMakeFiles/templates_practice.dir/chapter2/specialization_template_class_2.5.cpp.obj	4a908ca4e0e91705
 13	1606	6799006896411830	CMakeFiles/templates_practice.dir/chapter1/default_args_of_template_1.4.cpp.obj	5760400a1b53ae8c
@@ -18,6 +18,5 @@
 3142	4514	6799006925724883	CMakeFiles/templates_practice.dir/chapter3/Restrictions_for_Nontype_Template_Parameters_3.3.cpp.obj	b52d2382d8a9bdf6
 2990	4359	6799006924155249	CMakeFiles/templates_practice.dir/chapter3/Template_Parameter_Type_auto_3.4.cpp.obj	92358bf3f8e546fa
 3003	4360	6799006924155249	CMakeFiles/templates_practice.dir/chapter4/fold_experssions.cpp.obj	96ae60481c7b9e1
-3179	4560	6799006926198048	CMakeFiles/templates_practice.dir/chapter4/variadic_templates_4.1.cpp.obj	f75d8b823e3a65c
-4	1413	6799007795849698	CMakeFiles/templates_practice.dir/chapter4/fold_experssions_4.2.cpp.obj	5d52f2cbb873c2bd
-1413	1577	6799007797423146	templates_practice.exe	e2758990f0d0b994
+19	1678	6799022520469630	CMakeFiles/templates_practice.dir/chapter4/variadic_templates_4.1.cpp.obj	f75d8b823e3a65c
+3	967	6799150013521847	CMakeFiles/templates_practice.dir/chapter4/fold_experssions_4.2.cpp.obj	5d52f2cbb873c2bd
