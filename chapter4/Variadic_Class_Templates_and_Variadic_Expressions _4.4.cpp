@@ -82,7 +82,8 @@ namespace ch4_4 {
 }
 
 int
-main()
+//main()
+main_variadic_class_templates_and_variadic_expressions()
 {
 
     return 0;

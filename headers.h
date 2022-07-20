@@ -15,6 +15,7 @@
 #include <set>
 #include <deque>
 #include <array>
+#include <bitset>
 #include <cassert>
 #include <numeric>
 #include <algorithm>

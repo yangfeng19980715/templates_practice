@@ -163,6 +163,48 @@ build CMakeFiles/templates_practice.dir/chapter4/Variadic_Class_Templates_and_Va
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter4
 
+build CMakeFiles/templates_practice.dir/chapter5/Keyword_typename_5.1.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter5/Keyword_typename_5.1.cpp || cmake_object_order_depends_target_templates_practice
+  DEP_FILE = CMakeFiles\templates_practice.dir\chapter5\Keyword_typename_5.1.cpp.obj.d
+  FLAGS = -g -std=gnu++23
+  OBJECT_DIR = CMakeFiles\templates_practice.dir
+  OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter5
+
+build CMakeFiles/templates_practice.dir/chapter5/Zero_Initialization_5.2.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter5/Zero_Initialization_5.2.cpp || cmake_object_order_depends_target_templates_practice
+  DEP_FILE = CMakeFiles\templates_practice.dir\chapter5\Zero_Initialization_5.2.cpp.obj.d
+  FLAGS = -g -std=gnu++23
+  OBJECT_DIR = CMakeFiles\templates_practice.dir
+  OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter5
+
+build CMakeFiles/templates_practice.dir/chapter5/Using_this_operator_arrow_5.3.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter5/Using_this_operator_arrow_5.3.cpp || cmake_object_order_depends_target_templates_practice
+  DEP_FILE = CMakeFiles\templates_practice.dir\chapter5\Using_this_operator_arrow_5.3.cpp.obj.d
+  FLAGS = -g -std=gnu++23
+  OBJECT_DIR = CMakeFiles\templates_practice.dir
+  OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter5
+
+build CMakeFiles/templates_practice.dir/chapter5/Templates_for_Raw_Arrays_and_String_Literals_5.4.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter5/Templates_for_Raw_Arrays_and_String_Literals_5.4.cpp || cmake_object_order_depends_target_templates_practice
+  DEP_FILE = CMakeFiles\templates_practice.dir\chapter5\Templates_for_Raw_Arrays_and_String_Literals_5.4.cpp.obj.d
+  FLAGS = -g -std=gnu++23
+  OBJECT_DIR = CMakeFiles\templates_practice.dir
+  OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter5
+
+build CMakeFiles/templates_practice.dir/chapter5/Member_Templates_5.5.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter5/Member_Templates_5.5.cpp || cmake_object_order_depends_target_templates_practice
+  DEP_FILE = CMakeFiles\templates_practice.dir\chapter5\Member_Templates_5.5.cpp.obj.d
+  FLAGS = -g -std=gnu++23
+  OBJECT_DIR = CMakeFiles\templates_practice.dir
+  OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter5
+
+build CMakeFiles/templates_practice.dir/chapter5/Variable_Templates_5.6.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter5/Variable_Templates_5.6.cpp || cmake_object_order_depends_target_templates_practice
+  DEP_FILE = CMakeFiles\templates_practice.dir\chapter5\Variable_Templates_5.6.cpp.obj.d
+  FLAGS = -g -std=gnu++23
+  OBJECT_DIR = CMakeFiles\templates_practice.dir
+  OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter5
+
+build CMakeFiles/templates_practice.dir/chapter5/Template_Template_Parameters_5.7.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter5/Template_Template_Parameters_5.7.cpp || cmake_object_order_depends_target_templates_practice
+  DEP_FILE = CMakeFiles\templates_practice.dir\chapter5\Template_Template_Parameters_5.7.cpp.obj.d
+  FLAGS = -g -std=gnu++23
+  OBJECT_DIR = CMakeFiles\templates_practice.dir
+  OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter5
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target templates_practice
@@ -171,7 +213,7 @@ build CMakeFiles/templates_practice.dir/chapter4/Variadic_Class_Templates_and_Va
 #############################################
 # Link the executable templates_practice.exe
 
-build templates_practice.exe: CXX_EXECUTABLE_LINKER__templates_practice_Debug CMakeFiles/templates_practice.dir/chapter1/ch_1_function_templates.cpp.obj CMakeFiles/templates_practice.dir/chapter1/default_args_of_template_1.4.cpp.obj CMakeFiles/templates_practice.dir/chapter1/overload_function_template_1.5.cpp.obj CMakeFiles/templates_practice.dir/chapter2/template_stack_2.1.cpp.obj CMakeFiles/templates_practice.dir/chapter2/partially_use_class_template_2.3.cpp.obj CMakeFiles/templates_practice.dir/chapter2/specialization_template_class_2.5.cpp.obj CMakeFiles/templates_practice.dir/chapter2/partial_specialization_template_class_2.6.cpp.obj CMakeFiles/templates_practice.dir/chapter2/default_template_args_2.7.cpp.obj CMakeFiles/templates_practice.dir/chapter2/type_aliases_2.8.cpp.obj CMakeFiles/templates_practice.dir/chapter2/decltype_for_class_template_2.9.cpp.obj CMakeFiles/templates_practice.dir/chapter2/templatized_aggregates_2.10.cpp.obj CMakeFiles/templates_practice.dir/chapter3/noneType_class_template_parameters_3.1.cpp.obj CMakeFiles/templates_practice.dir/chapter3/Nontype_Function_Template_Parameters_3.2.cpp.obj CMakeFiles/templates_practice.dir/chapter3/Restrictions_for_Nontype_Template_Parameters_3.3.cpp.obj CMakeFiles/templates_practice.dir/chapter3/Template_Parameter_Type_auto_3.4.cpp.obj CMakeFiles/templates_practice.dir/chapter4/fold_experssions_4.2.cpp.obj CMakeFiles/templates_practice.dir/chapter4/variadic_templates_4.1.cpp.obj CMakeFiles/templates_practice.dir/chapter4/Application_of_Variadic_Templates_4.3.cpp.obj CMakeFiles/templates_practice.dir/chapter4/Variadic_Class_Templates_and_Variadic_Expressions__4.4.cpp.obj
+build templates_practice.exe: CXX_EXECUTABLE_LINKER__templates_practice_Debug CMakeFiles/templates_practice.dir/chapter1/ch_1_function_templates.cpp.obj CMakeFiles/templates_practice.dir/chapter1/default_args_of_template_1.4.cpp.obj CMakeFiles/templates_practice.dir/chapter1/overload_function_template_1.5.cpp.obj CMakeFiles/templates_practice.dir/chapter2/template_stack_2.1.cpp.obj CMakeFiles/templates_practice.dir/chapter2/partially_use_class_template_2.3.cpp.obj CMakeFiles/templates_practice.dir/chapter2/specialization_template_class_2.5.cpp.obj CMakeFiles/templates_practice.dir/chapter2/partial_specialization_template_class_2.6.cpp.obj CMakeFiles/templates_practice.dir/chapter2/default_template_args_2.7.cpp.obj CMakeFiles/templates_practice.dir/chapter2/type_aliases_2.8.cpp.obj CMakeFiles/templates_practice.dir/chapter2/decltype_for_class_template_2.9.cpp.obj CMakeFiles/templates_practice.dir/chapter2/templatized_aggregates_2.10.cpp.obj CMakeFiles/templates_practice.dir/chapter3/noneType_class_template_parameters_3.1.cpp.obj CMakeFiles/templates_practice.dir/chapter3/Nontype_Function_Template_Parameters_3.2.cpp.obj CMakeFiles/templates_practice.dir/chapter3/Restrictions_for_Nontype_Template_Parameters_3.3.cpp.obj CMakeFiles/templates_practice.dir/chapter3/Template_Parameter_Type_auto_3.4.cpp.obj CMakeFiles/templates_practice.dir/chapter4/fold_experssions_4.2.cpp.obj CMakeFiles/templates_practice.dir/chapter4/variadic_templates_4.1.cpp.obj CMakeFiles/templates_practice.dir/chapter4/Application_of_Variadic_Templates_4.3.cpp.obj CMakeFiles/templates_practice.dir/chapter4/Variadic_Class_Templates_and_Variadic_Expressions__4.4.cpp.obj CMakeFiles/templates_practice.dir/chapter5/Keyword_typename_5.1.cpp.obj CMakeFiles/templates_practice.dir/chapter5/Zero_Initialization_5.2.cpp.obj CMakeFiles/templates_practice.dir/chapter5/Using_this_operator_arrow_5.3.cpp.obj CMakeFiles/templates_practice.dir/chapter5/Templates_for_Raw_Arrays_and_String_Literals_5.4.cpp.obj CMakeFiles/templates_practice.dir/chapter5/Member_Templates_5.5.cpp.obj CMakeFiles/templates_practice.dir/chapter5/Variable_Templates_5.6.cpp.obj CMakeFiles/templates_practice.dir/chapter5/Template_Template_Parameters_5.7.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\templates_practice.dir

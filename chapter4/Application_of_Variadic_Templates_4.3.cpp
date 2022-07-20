@@ -36,7 +36,8 @@ namespace ch4_3 {
 }
 
 int
-main()
+//main()
+main_application_of_variadic_templates()
 {
 
     return 0;
