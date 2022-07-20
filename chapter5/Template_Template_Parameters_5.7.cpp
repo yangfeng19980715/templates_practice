@@ -89,8 +89,8 @@ namespace ch5_7 {
 }
 
 int
-//main()
-main_template_template_parameters()
+main()
+//main_template_template_parameters()
 {
 
     return 0;
