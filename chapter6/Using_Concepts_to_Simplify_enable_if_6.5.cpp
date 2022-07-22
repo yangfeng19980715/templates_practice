@@ -95,7 +95,8 @@ namespace ch6_5 {
 }
 
 int
-main()
+//main()
+main_using_concepts_to_simplify_enable_if()
 {
     ch6_5::case1::Person p { "hello" };
 

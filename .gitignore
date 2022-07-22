@@ -1,3 +1,6 @@
 *.log
 *.dir/
 *.exe
+*.json
+*ninja*
+*.ninja
