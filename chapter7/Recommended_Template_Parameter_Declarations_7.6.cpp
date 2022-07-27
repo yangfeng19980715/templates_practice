@@ -125,7 +125,8 @@ namespace ch7_6 {
 }
 
 int
-main()
+//main()
+main_recommended_template_parameter_declarations()
 {
 
     return 0;

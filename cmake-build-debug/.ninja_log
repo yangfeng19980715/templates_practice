@@ -1,7 +1,7 @@
 # ninja log v5
 4	1603	6801592767856985	CMakeFiles/templates_practice.dir/chapter2/specialization_template_class_2.5.cpp.obj	4a908ca4e0e91705
 1604	3176	6801592783554036	CMakeFiles/templates_practice.dir/chapter1/overload_function_template_1.5.cpp.obj	d4f6eadceef64726
-860	1061	6801758408861963	templates_practice.exe	85e0aa0250d358f5
+836	1025	6805930390373427	templates_practice.exe	ed2e2243131886d7
 3166	4725	6801592799143238	CMakeFiles/templates_practice.dir/chapter2/templatized_aggregates_2.10.cpp.obj	cdf05d1e565b2df6
 52	1966	6801592771465503	CMakeFiles/templates_practice.dir/chapter2/template_stack_2.1.cpp.obj	ee13d16506df0d4b
 6719	8091	6801592832820749	CMakeFiles/templates_practice.dir/chapter6/Disable_templates_with_enable_if_6.3.cpp.obj	fcb0b639ecd4b285
@@ -23,6 +23,7 @@
 3315	4797	6801592799774232	CMakeFiles/templates_practice.dir/chapter3/Template_Parameter_Type_auto_3.4.cpp.obj	92358bf3f8e546fa
 1758	3315	6801592784965327	CMakeFiles/templates_practice.dir/chapter4/variadic_templates_4.1.cpp.obj	f75d8b823e3a65c
 3699	5235	6801592804185842	CMakeFiles/templates_practice.dir/chapter4/fold_experssions_4.2.cpp.obj	5d52f2cbb873c2bd
+22	1200	6805915638652671	CMakeFiles/templates_practice.dir/chapter7/Recommended_Template_Parameter_Declarations_7.6.cpp.obj	74fef0a70a798577
 4666	6186	6801592813778903	CMakeFiles/templates_practice.dir/chapter5/Keyword_typename_5.1.cpp.obj	8d400aeeaa111b62
 21	1635	6801592768173610	CMakeFiles/templates_practice.dir/chapter5/Zero_Initialization_5.2.cpp.obj	afd338484db20bc7
 4798	6259	6801592814409449	CMakeFiles/templates_practice.dir/chapter5/Using_this_operator_arrow_5.3.cpp.obj	faeb295593217434
@@ -36,4 +37,16 @@
 4	1151	6801731003194832	CMakeFiles/templates_practice.dir/chapter7/Passing_by_Reference_7.2.cpp.obj	cbb071f309062399
 12	1158	6801731003264845	CMakeFiles/templates_practice.dir/chapter7/Using_std_ref_and_std_cref_7.3.cpp.obj	8069b0b0f0fdfdcc
 4	994	6801745225264171	CMakeFiles/templates_practice.dir/chapter7/Dealing_with_String_Literals_and_Raw_Arrays_7.4.cpp.obj	b5cc4b59cade8482
-3	860	6801758406859997	CMakeFiles/templates_practice.dir/chapter7/Dealing_with_Return_Values_7.5.cpp.obj	91db0708ac496b8c
+13	1276	6805915639362951	CMakeFiles/templates_practice.dir/chapter7/Dealing_with_Return_Values_7.5.cpp.obj	91db0708ac496b8c
+13	1027	6805929398271863	CMakeFiles/templates_practice.dir/chapter8/Template_Meta_programming_8.1.cpp.obj	e8d84cd5110806a4
+3	835	6805930388489976	CMakeFiles/templates_practice.dir/chapter8/Computing_with_constexpr_8.2.cpp.obj	a8a86e1671a76e0d
+22	1522	6806060417540867	CMakeFiles/templates_practice.dir/chapter8/Execution_Path_Selection_with_Partial_Specialization_8.3.cpp.obj	5965b8f0b7bddead
+38	1524	6806060417560880	CMakeFiles/templates_practice.dir/chapter8/SFINAE_Substitution_Failure_Is_Not_An_Error_8.4.cpp.obj	373f4ce87f142813
+30	1528	6806060417642033	CMakeFiles/templates_practice.dir/chapter8/Computing_with_constexpr_8.2.cpp.obj	a8a86e1671a76e0d
+23	901	6806060798031879	CMakeFiles/templates_practice.dir/chapter8/compile_time_if_8.5.cpp.obj	2d48cce4fe0260b1
+901	1154	6806060800504753	templates_practice.exe	edc9cbfde0698533
+3	801	6806060884539347	CMakeFiles/templates_practice.dir/chapter8/compile_time_if_8.5.cpp.obj	2d48cce4fe0260b1
+801	982	6806060886300027	templates_practice.exe	edc9cbfde0698533
+5	818	6806061008641038	CMakeFiles/templates_practice.dir/chapter8/compile_time_if_8.5.cpp.obj	2d48cce4fe0260b1
+818	994	6806061010349158	templates_practice.exe	edc9cbfde0698533
+0	27	0	clean	6d7eff3c8c469445
