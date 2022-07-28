@@ -108,6 +108,7 @@ int
 main_compile_time_if()
 {
     test_ch8_5::test_case1();
+    std::nullptr_t npt;
     
     return 0;
 }
