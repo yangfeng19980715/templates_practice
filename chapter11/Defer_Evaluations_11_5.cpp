@@ -87,8 +87,8 @@ namespace ch11_5 {
 }
 
 int
-main()
-//main_Defer_Evaluations()
+//main()
+main_Defer_Evaluations()
 {
 
     return 0;

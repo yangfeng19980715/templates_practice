@@ -154,8 +154,8 @@ namespace ch11_2 {
 }
 
 int
-main()
-//main_Other_Utilities_to_Implement_Generic_Libraries_11_2()
+//main()
+main_Other_Utilities_to_Implement_Generic_Libraries_11_2()
 {
 
     return 0;
