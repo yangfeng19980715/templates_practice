@@ -88,6 +88,7 @@ namespace nmsp {
         template <typename T, std::size_t SZ>
         long foo(std::array<T, SZ> const& coll) {
             Helper<SZ> h;
+            return 0;
         }
     
     }

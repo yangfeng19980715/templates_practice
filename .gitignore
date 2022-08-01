@@ -4,3 +4,5 @@
 *.json
 *ninja*
 *.ninja
+*.xml
+cmake-build-debug/
