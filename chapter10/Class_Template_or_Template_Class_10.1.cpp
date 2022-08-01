@@ -50,8 +50,8 @@ namespace ch10_1 {
 }
 
 int
-main()
-//main_Class_Template_or_Template_Class_10_1()
+//main()
+main_Class_Template_or_Template_Class_10_1()
 {
 
     return 0;
