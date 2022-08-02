@@ -37,8 +37,8 @@ namespace nmsp {
 }
 
 int
-main()
-//main_Afternotes_18_7()
+//main()
+main_Afternotes_18_7()
 {
 
     return 0;
