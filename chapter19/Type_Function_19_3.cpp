@@ -785,8 +785,8 @@ namespace ch19_3 {
 }
 
 int
-main()
-//main_Type_Function_19_3()
+//main()
+main_Type_Function_19_3()
 {
     ch19_3::case3::test();
 
