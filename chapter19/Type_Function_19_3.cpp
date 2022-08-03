@@ -349,6 +349,17 @@ namespace ch19_3 {
         
         template<typename T>
         using RemoveReference = typename RemoveReferenceT<T>::Type;
+    
+        template<typename T>
+        struct RemoveConstT {
+            using Type = T;
+        };
+        template<typename T>
+        struct RemoveConstT<T const> {
+            using Type = T;
+        };
+        template<typename T>
+        using RemoveConst = typename RemoveConstT<T>::Type;
     }
     
     namespace case3 {

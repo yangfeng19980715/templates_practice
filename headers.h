@@ -12,6 +12,9 @@
 #include <memory>
 #include <type_traits>
 #include <list>
+#include <atomic>
+#include <thread>
+#include <mutex>
 #include <set>
 #include <deque>
 #include <array>

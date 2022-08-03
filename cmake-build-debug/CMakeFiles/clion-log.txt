@@ -1,8 +1,4 @@
 C:\Users\yangfeng\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\222.3345.126\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/ninja/win/ninja.exe -G Ninja -S C:\Users\yangfeng\CLionProjects\templates_practice -B C:\Users\yangfeng\CLionProjects\templates_practice\cmake-build-debug
-CMake Error at CMakeLists.txt:22:
-  Parse error.  Expected a command name, got unquoted argument with text
-  "=======".
-
-
--- Configuring incomplete, errors occurred!
-See also "C:/Users/yangfeng/CLionProjects/templates_practice/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/yangfeng/CLionProjects/templates_practice/cmake-build-debug
