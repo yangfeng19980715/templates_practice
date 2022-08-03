@@ -441,6 +441,7 @@ namespace ch19_1 {
     constexpr 的。
      */
     
+    /*
     namespace case4 {
         
         template <typename T>
@@ -477,6 +478,7 @@ namespace ch19_1 {
         };
     
     }
+     */
     
     /*
 参数化的萃取
