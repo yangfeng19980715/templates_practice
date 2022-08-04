@@ -395,8 +395,10 @@ namespace ch19_4 {
     namespace case4 {
         
         // helper: checking validity of f (args...) for F f and Args... args:
-        template<typename F, typename... Args,
-        typename = decltype(std::declval<F>() (std::declval<Args&&>()...))>
+        template<typename F,
+                    typename... Args,
+                    typename = decltype(std::declval<F>() (std::declval<Args&&>()...))
+                >
         std::true_type isValidImpl(void*);
         
         // fallback if helper SFINAE’d out:
@@ -468,7 +470,166 @@ namespace ch19_4 {
         
     }
     
+    /*
+19.4.4 SFINAE 友好的萃取
+    通常，类型萃取应该可以在不使程序出现问题的情况下回答特定的问题。基于 SFINAE 的萃
+    取解决这一难题的方式是“小心地将潜在的问题捕获进一个 SFINAE 上下文中”，将可能出
+    现的错误转变成相反的结果。
+    但是，到目前为止我们所展示的一些萃取（比如在第 19.3.4 节介绍的 PlusResultT 萃取），
+    在应对错误的时候表现的并不是那么好。会议一下之前关于 PlusResultT 的定义：
+    template<typename T1, typename T2>
+    struct PlusResultT {
+    using Type = decltype(std::declval<T1>() + std::declval<T2>());
+    };
+    五车书馆
+    210
+    template<typename T1, typename T2>
+    using PlusResult = typename PlusResultT<T1, T2>::Type;
+    在这一定义中，用到+的上下文并没有被 SFINAE 保护。因此，如果程序试着对不支持+运算
+    符的类型执行 PlusResultT 的话，那么 PlusResultT 计算本身就会使成勋遇到错误，比如下面
+    这个例子中，试着为两个无关类型 A 和 B 的数组的求和运算声明返回类型的情况：
+    template<typename T>
+    class Array {
+    …
+    };
+    // declare + for arrays of different element types:
+    template<typename T1, typename T2>
+    Array<typename PlusResultT<T1, T2>::Type> operator+ (Array<T1> const&,
+    Array<T2> const&);
+    很显然，如果没有为数组元素定义合适的+运算符的话，使用 PlusResultT<>就会遇到错误。
+    class A {
+    };
+    class B {
+    };
+    void addAB(Array<A> arrayA, Array<B> arrayB) {
+    auto sum = arrayA + arrayB; // ERROR: fails in instantiation of
+    PlusResultT<A, B>
+    …
+    }
+    这里的问题并不是错误会发生在代码明显有问题的地方（没办法对元素类型分别为 A 和 B
+    的数组进行求和），而是错误会发生在对 operator+进行模板参数推断的时候，在很深层次
+    的 PlusResultT<A,B>的实例化中。
+    这会导致一个很值得注意的结果：即使我们为 A 和 B 的数组重载一个求和函数，程序依然
+    可能会遇到编译错误，because C++ does not specify whether the types in a function template
+    are actually instantiated if another overload would be better：
+    // declare generic + for arrays of different element types:
+    template<typename T1, typename T2>
+    Array<typename PlusResultT<T1, T2>::Type>
+    operator+ (Array<T1> const&, Array<T2> const&);
+    // overload + for concrete types:
+    Array<A> operator+(Array<A> const& arrayA, Array<B> const& arrayB);
+    void addAB(Array<A> const& arrayA, Array<B> const& arrayB) {
+    五车书馆
+    211
+    auto sum = arrayA + arrayB; // ERROR?: depends on whether the compiler
+    … // instantiates PlusResultT<A,B>
+    }
+    如果编译器可以在不对第一个 operator+模板声明进行推断和替换的情况下，就能够判断出
+    第二个 operator+声明会更加匹配的话，上述代码也不会有问题。
+    但是，在推断或者替换一个备选函数模板的时候，任何发生在类模板定义的实例化过程中的
+    事情都不是函数模板替换的立即上下文（immediate context），SFINAE 也不会保护我们不会
+    在其中构建无效类型或者表达式。此时并不会丢弃这一函数模板待选项，而是会立即报出试
+    图在 PlusResult<>中为 A 和 B 调用 operator + 的错误：
+    template<typename T1, typename T2>
+    struct PlusResultT {
+    using Type = decltype(std::declval<T1>() + std::declval<T2> ());
+    }
+    为了解决这一问题，我们必须要将 PlusResultT 变成 SFINAR 友好的，也就是说需要为之提供
+    更恰当的定义，以使其即使会在 decltype 中遇到错误，也不会诱发编译错误。
+    参考在之前章节中介绍的 HassLessT，我们可以通过定义一个 HasPlusT 萃取，来判断给定的
+    类型是有一个可用的+运算符：
+    #include <utility> // for declval
+    #include <type_traits> // for true_type, false_type, and void_t//
+    primary template:
+    template<typename, typename, typename = std::void_t<>>
+    struct HasPlusT : std::false_type
+    {};
+    // partial specialization (may be SFINAE’d away):
+    template<typename T1, typename T2>
+    struct HasPlusT<T1, T2, std::void_t<decltype(std::declval<T1>() +
+    std::declval<T2> ())>>
+    : std::true_type
+    {};
+    如果其返回结果为 true，PlusResultT 就可以使用现有的实现。否则，PlusResultT 就需要一个
+    安全的默认实现。对于一个萃取，如果对某一组模板参数它不能生成有意义的结果，那么最
+    好的默认行为就是不为其提供 Type 成员。这样，如果萃取被用于 SFINAE 上下文中（比如之
+    前代码中 array 类型的 operator+的返回值类型），缺少 Type 成员会导致模板参数推断出错，
+    这也正是我们所期望的、array 类型的 operator+模板的行为。
+    下面这一版 PlusResultT 的实现就提供了上述的行为：
+    #include "hasplus.hpp"
+    template<typename T1, typename T2, bool = HasPlusT<T1, T2>::value>
+    五车书馆
+    212
+    struct PlusResultT { //primary template, used when HasPlusT yields true
+    using Type = decltype(std::declval<T1>() + std::declval<T2>());
+    };
+    template<typename T1, typename T2>
+    struct PlusResultT<T1, T2, false> { //partial specialization, used otherwise
+    };
+    在这一版的实现中，我们引入了一个有默认值的模板参数，它会使用上文中的 HasPlusT 来
+    判断前面的两个模板参数是否支持求和操作。然后我们对于第三个模板参数的值为 false 的
+    情况进行了偏特化，而且在该偏特化中没有任何成员，从而避免了我们所描述过的问题。对
+    与支持求和操作的情况，第三个模板参数的值是 true，因此会选用主模板，也就是定义了
+    Type 成员的那个模板。这样就保证了只有对支持+操作的类型，PlusResultT 才会提供返回类
+    型。（注意，被进行求和的模板参数不应该被显式的指定参数）
+    再次考虑 Array<A>和 Array<B>的求和：如果使用最新的 PlusResultT 实现，那么 PlusResultT<A,
+    B>的实例化将不会有 Type 成员，因为不能够对 A 和 B 进行求和。因此对应的 operator+模板
+    的返回值类型是无效的，该函数模板也就会被 SFINAE 掉。这样就会去选择专门为 Array<A>
+    和 Array<B>指定的 operator+的重载版本。
+    作为一般的设计原则，在给定了合理的模板参数的情况下，萃取模板永远不应该在实例化阶
+    段出错。其实先方式通常是执行两次相关的检查：
+    1.
+    一次是检查相关操作是否有效
+    2.
+    一次是计算其结果
+    在 PlusResultT 中我们已经见证了这一原则，在那里我们通过调用 HasPlusT<>来判断
+    PlusResultImpl<>中对 operator+的调用是否有效。
+    让我们将这一原则用于在第 19.3.1 节介绍的 ElementT：它从一个容器类型生成该容器的元
+    素类型。同样的，由于其结果依赖于该容器类型所包含的成员类型 value_type，因此主模板
+    应该只有在容器类型包含 value_type 成员的时候，才去定义成员类型 Type：
+    template<typename C, bool = HasMemberT_value_type<C>::value>
+    struct ElementT {
+    using Type = typename C::value_type;
+    };
+    template<typename C>
+    struct ElementT<C, false> {
+    };
+    第 三 个 能 够 让 萃 取 变 得 SFINAE 友 好 的 例 子 将 在 第 19.7.2 节 介 绍 ， 在 那 里 对 于
+    IsNothrowMoveConstructibleT 我们需要首先检测是否存在游动构造函数，然后检测它是否被
+    声明为 noexcept 的。
+     */
+    
     namespace case5 {
+        /*
+         我们可以通过定义一个 HasPlusT 萃取，来判断给定的类型是有一个可用的+运算符:
+         */
+    
+        //primary template:
+        template<typename, typename, typename = std::void_t<>>
+        struct HasPlusT : std::false_type {};
+        
+        // partial specialization (may be SFINAE’d away):
+        template<typename T1, typename T2>
+        struct HasPlusT<T1, T2, std::void_t<decltype(std::declval<T1>() + std::declval<T2> ())>> : std::true_type{};
+        
+        /*
+        如果其返回结果为 true，PlusResultT 就可以使用现有的实现。
+         否则，PlusResultT 就需要一个安全的默认实现。
+         对于一个萃取，如果对某一组模板参数它不能生成有意义的结果，那么最好的默认行为就是不为其提供 Type 成员。
+         
+         这样，如果萃取被用于 SFINAE 上下文中（比如之前代码中 array 类型的 operator+的返回值类型），
+           缺少 Type 成员会导致模板参数推断出错，这也正是我们所期望的、array 类型的 operator+模板的行为。
+           
+            下面这一版 PlusResultT 的实现就提供了上述的行为：
+         */
+        template<typename T1, typename T2, bool = HasPlusT<T1, T2>::value>
+        struct PlusResultT {                                                        //primary template, used when HasPlusT yields true
+            using Type = decltype(std::declval<T1>() + std::declval<T2>());
+        };
+        
+        template<typename T1, typename T2>
+        struct PlusResultT<T1, T2, false> {};                                       //partial specialization, used otherwise
+        
     
     }
 
@@ -480,8 +641,8 @@ namespace ch19_4 {
 }
 
 int
-main()
-//main_SFINAE_Based_Traits_19_4()
+//main()
+main_SFINAE_Based_Traits_19_4()
 {
     ch19_4::case4::test();
 

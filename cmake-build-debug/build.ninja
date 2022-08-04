@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = D$:/jetbrainsProj/clionProj/templates_practice/cmake-build-debug/
+cmake_ninja_workdir = C$:/Users/yangfeng/CLionProjects/templates_practice/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target templates_practice
 
@@ -49,398 +49,404 @@ cmake_ninja_workdir = D$:/jetbrainsProj/clionProj/templates_practice/cmake-build
 
 build cmake_object_order_depends_target_templates_practice: phony || CMakeFiles/templates_practice.dir
 
-build CMakeFiles/templates_practice.dir/chapter1/ch_1_function_templates.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter1/ch_1_function_templates.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter1/ch_1_function_templates.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter1/ch_1_function_templates.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter1\ch_1_function_templates.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter1
 
-build CMakeFiles/templates_practice.dir/chapter1/default_args_of_template_1.4.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter1/default_args_of_template_1.4.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter1/default_args_of_template_1.4.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter1/default_args_of_template_1.4.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter1\default_args_of_template_1.4.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter1
 
-build CMakeFiles/templates_practice.dir/chapter1/overload_function_template_1.5.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter1/overload_function_template_1.5.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter1/overload_function_template_1.5.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter1/overload_function_template_1.5.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter1\overload_function_template_1.5.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter1
 
-build CMakeFiles/templates_practice.dir/chapter2/template_stack_2.1.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter2/template_stack_2.1.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter2/template_stack_2.1.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter2/template_stack_2.1.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter2\template_stack_2.1.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter2
 
-build CMakeFiles/templates_practice.dir/chapter2/partially_use_class_template_2.3.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter2/partially_use_class_template_2.3.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter2/partially_use_class_template_2.3.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter2/partially_use_class_template_2.3.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter2\partially_use_class_template_2.3.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter2
 
-build CMakeFiles/templates_practice.dir/chapter2/specialization_template_class_2.5.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter2/specialization_template_class_2.5.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter2/specialization_template_class_2.5.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter2/specialization_template_class_2.5.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter2\specialization_template_class_2.5.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter2
 
-build CMakeFiles/templates_practice.dir/chapter2/partial_specialization_template_class_2.6.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter2/partial_specialization_template_class_2.6.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter2/partial_specialization_template_class_2.6.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter2/partial_specialization_template_class_2.6.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter2\partial_specialization_template_class_2.6.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter2
 
-build CMakeFiles/templates_practice.dir/chapter2/default_template_args_2.7.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter2/default_template_args_2.7.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter2/default_template_args_2.7.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter2/default_template_args_2.7.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter2\default_template_args_2.7.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter2
 
-build CMakeFiles/templates_practice.dir/chapter2/type_aliases_2.8.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter2/type_aliases_2.8.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter2/type_aliases_2.8.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter2/type_aliases_2.8.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter2\type_aliases_2.8.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter2
 
-build CMakeFiles/templates_practice.dir/chapter2/decltype_for_class_template_2.9.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter2/decltype_for_class_template_2.9.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter2/decltype_for_class_template_2.9.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter2/decltype_for_class_template_2.9.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter2\decltype_for_class_template_2.9.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter2
 
-build CMakeFiles/templates_practice.dir/chapter2/templatized_aggregates_2.10.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter2/templatized_aggregates_2.10.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter2/templatized_aggregates_2.10.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter2/templatized_aggregates_2.10.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter2\templatized_aggregates_2.10.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter2
 
-build CMakeFiles/templates_practice.dir/chapter3/noneType_class_template_parameters_3.1.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter3/noneType_class_template_parameters_3.1.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter3/noneType_class_template_parameters_3.1.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter3/noneType_class_template_parameters_3.1.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter3\noneType_class_template_parameters_3.1.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter3
 
-build CMakeFiles/templates_practice.dir/chapter3/Nontype_Function_Template_Parameters_3.2.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter3/Nontype_Function_Template_Parameters_3.2.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter3/Nontype_Function_Template_Parameters_3.2.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter3/Nontype_Function_Template_Parameters_3.2.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter3\Nontype_Function_Template_Parameters_3.2.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter3
 
-build CMakeFiles/templates_practice.dir/chapter3/Restrictions_for_Nontype_Template_Parameters_3.3.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter3/Restrictions_for_Nontype_Template_Parameters_3.3.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter3/Restrictions_for_Nontype_Template_Parameters_3.3.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter3/Restrictions_for_Nontype_Template_Parameters_3.3.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter3\Restrictions_for_Nontype_Template_Parameters_3.3.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter3
 
-build CMakeFiles/templates_practice.dir/chapter3/Template_Parameter_Type_auto_3.4.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter3/Template_Parameter_Type_auto_3.4.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter3/Template_Parameter_Type_auto_3.4.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter3/Template_Parameter_Type_auto_3.4.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter3\Template_Parameter_Type_auto_3.4.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter3
 
-build CMakeFiles/templates_practice.dir/chapter4/fold_experssions_4.2.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter4/fold_experssions_4.2.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter4/fold_experssions_4.2.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter4/fold_experssions_4.2.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter4\fold_experssions_4.2.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter4
 
-build CMakeFiles/templates_practice.dir/chapter4/variadic_templates_4.1.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter4/variadic_templates_4.1.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter4/variadic_templates_4.1.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter4/variadic_templates_4.1.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter4\variadic_templates_4.1.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter4
 
-build CMakeFiles/templates_practice.dir/chapter4/Application_of_Variadic_Templates_4.3.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter4/Application_of_Variadic_Templates_4.3.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter4/Application_of_Variadic_Templates_4.3.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter4/Application_of_Variadic_Templates_4.3.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter4\Application_of_Variadic_Templates_4.3.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter4
 
-build CMakeFiles/templates_practice.dir/chapter4/Variadic_Class_Templates_and_Variadic_Expressions_4.4.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter4/Variadic_Class_Templates_and_Variadic_Expressions_4.4.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter4/Variadic_Class_Templates_and_Variadic_Expressions_4.4.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter4/Variadic_Class_Templates_and_Variadic_Expressions_4.4.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter4\Variadic_Class_Templates_and_Variadic_Expressions_4.4.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter4
 
-build CMakeFiles/templates_practice.dir/chapter5/Keyword_typename_5.1.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter5/Keyword_typename_5.1.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter5/Keyword_typename_5.1.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter5/Keyword_typename_5.1.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter5\Keyword_typename_5.1.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter5
 
-build CMakeFiles/templates_practice.dir/chapter5/Zero_Initialization_5.2.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter5/Zero_Initialization_5.2.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter5/Zero_Initialization_5.2.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter5/Zero_Initialization_5.2.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter5\Zero_Initialization_5.2.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter5
 
-build CMakeFiles/templates_practice.dir/chapter5/Using_this_operator_arrow_5.3.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter5/Using_this_operator_arrow_5.3.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter5/Using_this_operator_arrow_5.3.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter5/Using_this_operator_arrow_5.3.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter5\Using_this_operator_arrow_5.3.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter5
 
-build CMakeFiles/templates_practice.dir/chapter5/Templates_for_Raw_Arrays_and_String_Literals_5.4.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter5/Templates_for_Raw_Arrays_and_String_Literals_5.4.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter5/Templates_for_Raw_Arrays_and_String_Literals_5.4.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter5/Templates_for_Raw_Arrays_and_String_Literals_5.4.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter5\Templates_for_Raw_Arrays_and_String_Literals_5.4.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter5
 
-build CMakeFiles/templates_practice.dir/chapter5/Member_Templates_5.5.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter5/Member_Templates_5.5.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter5/Member_Templates_5.5.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter5/Member_Templates_5.5.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter5\Member_Templates_5.5.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter5
 
-build CMakeFiles/templates_practice.dir/chapter5/Variable_Templates_5.6.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter5/Variable_Templates_5.6.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter5/Variable_Templates_5.6.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter5/Variable_Templates_5.6.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter5\Variable_Templates_5.6.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter5
 
-build CMakeFiles/templates_practice.dir/chapter5/Template_Template_Parameters_5.7.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter5/Template_Template_Parameters_5.7.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter5/Template_Template_Parameters_5.7.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter5/Template_Template_Parameters_5.7.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter5\Template_Template_Parameters_5.7.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter5
 
-build CMakeFiles/templates_practice.dir/chapter6/Perfect_Forwarding_6.1.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter6/Perfect_Forwarding_6.1.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter6/Perfect_Forwarding_6.1.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter6/Perfect_Forwarding_6.1.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter6\Perfect_Forwarding_6.1.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter6
 
-build CMakeFiles/templates_practice.dir/chapter6/Special_Member_Function_Templates_6.2.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter6/Special_Member_Function_Templates_6.2.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter6/Special_Member_Function_Templates_6.2.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter6/Special_Member_Function_Templates_6.2.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter6\Special_Member_Function_Templates_6.2.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter6
 
-build CMakeFiles/templates_practice.dir/chapter6/Disable_templates_with_enable_if_6.3.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter6/Disable_templates_with_enable_if_6.3.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter6/Disable_templates_with_enable_if_6.3.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter6/Disable_templates_with_enable_if_6.3.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter6\Disable_templates_with_enable_if_6.3.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter6
 
-build CMakeFiles/templates_practice.dir/chapter6/Using_enable_if_6.4.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter6/Using_enable_if_6.4.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter6/Using_enable_if_6.4.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter6/Using_enable_if_6.4.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter6\Using_enable_if_6.4.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter6
 
-build CMakeFiles/templates_practice.dir/chapter6/Using_Concepts_to_Simplify_enable_if_6.5.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter6/Using_Concepts_to_Simplify_enable_if_6.5.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter6/Using_Concepts_to_Simplify_enable_if_6.5.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter6/Using_Concepts_to_Simplify_enable_if_6.5.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter6\Using_Concepts_to_Simplify_enable_if_6.5.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter6
 
-build CMakeFiles/templates_practice.dir/chapter7/Passing_by_Value_7.1.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter7/Passing_by_Value_7.1.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter7/Passing_by_Value_7.1.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter7/Passing_by_Value_7.1.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter7\Passing_by_Value_7.1.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter7
 
-build CMakeFiles/templates_practice.dir/chapter7/Passing_by_Reference_7.2.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter7/Passing_by_Reference_7.2.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter7/Passing_by_Reference_7.2.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter7/Passing_by_Reference_7.2.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter7\Passing_by_Reference_7.2.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter7
 
-build CMakeFiles/templates_practice.dir/chapter7/Using_std_ref_and_std_cref_7.3.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter7/Using_std_ref_and_std_cref_7.3.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter7/Using_std_ref_and_std_cref_7.3.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter7/Using_std_ref_and_std_cref_7.3.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter7\Using_std_ref_and_std_cref_7.3.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter7
 
-build CMakeFiles/templates_practice.dir/chapter7/Dealing_with_String_Literals_and_Raw_Arrays_7.4.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter7/Dealing_with_String_Literals_and_Raw_Arrays_7.4.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter7/Dealing_with_String_Literals_and_Raw_Arrays_7.4.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter7/Dealing_with_String_Literals_and_Raw_Arrays_7.4.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter7\Dealing_with_String_Literals_and_Raw_Arrays_7.4.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter7
 
-build CMakeFiles/templates_practice.dir/chapter7/Dealing_with_Return_Values_7.5.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter7/Dealing_with_Return_Values_7.5.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter7/Dealing_with_Return_Values_7.5.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter7/Dealing_with_Return_Values_7.5.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter7\Dealing_with_Return_Values_7.5.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter7
 
-build CMakeFiles/templates_practice.dir/chapter7/Recommended_Template_Parameter_Declarations_7.6.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter7/Recommended_Template_Parameter_Declarations_7.6.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter7/Recommended_Template_Parameter_Declarations_7.6.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter7/Recommended_Template_Parameter_Declarations_7.6.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter7\Recommended_Template_Parameter_Declarations_7.6.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter7
 
-build CMakeFiles/templates_practice.dir/chapter8/Template_Meta_programming_8.1.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter8/Template_Meta_programming_8.1.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter8/Template_Meta_programming_8.1.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter8/Template_Meta_programming_8.1.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter8\Template_Meta_programming_8.1.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter8
 
-build CMakeFiles/templates_practice.dir/chapter8/Computing_with_constexpr_8.2.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter8/Computing_with_constexpr_8.2.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter8/Computing_with_constexpr_8.2.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter8/Computing_with_constexpr_8.2.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter8\Computing_with_constexpr_8.2.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter8
 
-build CMakeFiles/templates_practice.dir/chapter8/Execution_Path_Selection_with_Partial_Specialization_8.3.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter8/Execution_Path_Selection_with_Partial_Specialization_8.3.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter8/Execution_Path_Selection_with_Partial_Specialization_8.3.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter8/Execution_Path_Selection_with_Partial_Specialization_8.3.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter8\Execution_Path_Selection_with_Partial_Specialization_8.3.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter8
 
-build CMakeFiles/templates_practice.dir/chapter8/SFINAE_Substitution_Failure_Is_Not_An_Error_8.4.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter8/SFINAE_Substitution_Failure_Is_Not_An_Error_8.4.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter8/SFINAE_Substitution_Failure_Is_Not_An_Error_8.4.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter8/SFINAE_Substitution_Failure_Is_Not_An_Error_8.4.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter8\SFINAE_Substitution_Failure_Is_Not_An_Error_8.4.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter8
 
-build CMakeFiles/templates_practice.dir/chapter8/compile_time_if_8.5.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter8/compile_time_if_8.5.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter8/compile_time_if_8.5.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter8/compile_time_if_8.5.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter8\compile_time_if_8.5.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter8
 
-build CMakeFiles/templates_practice.dir/chapter9/The_Inclusion_Model_9.1.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter9/The_Inclusion_Model_9.1.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter9/The_Inclusion_Model_9.1.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter9/The_Inclusion_Model_9.1.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter9\The_Inclusion_Model_9.1.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter9
 
-build CMakeFiles/templates_practice.dir/chapter9/myfirst.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter9/myfirst.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter9/myfirst.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter9/myfirst.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter9\myfirst.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter9
 
-build CMakeFiles/templates_practice.dir/chapter9/Templates_and_inline_9.2.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter9/Templates_and_inline_9.2.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter9/Templates_and_inline_9.2.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter9/Templates_and_inline_9.2.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter9\Templates_and_inline_9.2.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter9
 
-build CMakeFiles/templates_practice.dir/chapter9/Precompiled_Headers_9.3.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter9/Precompiled_Headers_9.3.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter9/Precompiled_Headers_9.3.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter9/Precompiled_Headers_9.3.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter9\Precompiled_Headers_9.3.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter9
 
-build CMakeFiles/templates_practice.dir/chapter9/Decoding_the_Error_Novel_9.4.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter9/Decoding_the_Error_Novel_9.4.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter9/Decoding_the_Error_Novel_9.4.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter9/Decoding_the_Error_Novel_9.4.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter9\Decoding_the_Error_Novel_9.4.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter9
 
-build CMakeFiles/templates_practice.dir/chapter9/Afternotes_9.5.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter9/Afternotes_9.5.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter9/Afternotes_9.5.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter9/Afternotes_9.5.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter9\Afternotes_9.5.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter9
 
-build CMakeFiles/templates_practice.dir/chapter10/Class_Template_or_Template_Class_10.1.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter10/Class_Template_or_Template_Class_10.1.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter10/Class_Template_or_Template_Class_10.1.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter10/Class_Template_or_Template_Class_10.1.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter10\Class_Template_or_Template_Class_10.1.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter10
 
-build CMakeFiles/templates_practice.dir/chapter11/Callables_11_1.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter11/Callables_11_1.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter11/Callables_11_1.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter11/Callables_11_1.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter11\Callables_11_1.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter11
 
-build CMakeFiles/templates_practice.dir/chapter11/Other_Utilities_to_Implement_Generic_Libraries_11_2.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter11/Other_Utilities_to_Implement_Generic_Libraries_11_2.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter11/Other_Utilities_to_Implement_Generic_Libraries_11_2.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter11/Other_Utilities_to_Implement_Generic_Libraries_11_2.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter11\Other_Utilities_to_Implement_Generic_Libraries_11_2.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter11
 
-build CMakeFiles/templates_practice.dir/chapter11/Perfect_Forwarding_Temporaries_11_3.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter11/Perfect_Forwarding_Temporaries_11_3.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter11/Perfect_Forwarding_Temporaries_11_3.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter11/Perfect_Forwarding_Temporaries_11_3.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter11\Perfect_Forwarding_Temporaries_11_3.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter11
 
-build CMakeFiles/templates_practice.dir/chapter11/References_as_Template_Parameters_11_4.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter11/References_as_Template_Parameters_11_4.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter11/References_as_Template_Parameters_11_4.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter11/References_as_Template_Parameters_11_4.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter11\References_as_Template_Parameters_11_4.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter11
 
-build CMakeFiles/templates_practice.dir/chapter11/Defer_Evaluations_11_5.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter11/Defer_Evaluations_11_5.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter11/Defer_Evaluations_11_5.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter11/Defer_Evaluations_11_5.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter11\Defer_Evaluations_11_5.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter11
 
-build CMakeFiles/templates_practice.dir/chapter11/Things_to_Consider_When_Writting_Generic_Libraries_11_6.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter11/Things_to_Consider_When_Writting_Generic_Libraries_11_6.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter11/Things_to_Consider_When_Writting_Generic_Libraries_11_6.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter11/Things_to_Consider_When_Writting_Generic_Libraries_11_6.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter11\Things_to_Consider_When_Writting_Generic_Libraries_11_6.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter11
 
-build CMakeFiles/templates_practice.dir/chapter18/Dynamic_Polymorphism_18_1.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter18/Dynamic_Polymorphism_18_1.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter18/Dynamic_Polymorphism_18_1.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter18/Dynamic_Polymorphism_18_1.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter18\Dynamic_Polymorphism_18_1.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter18
 
-build CMakeFiles/templates_practice.dir/chapter18/Static_Polymorphism_18_2.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter18/Static_Polymorphism_18_2.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter18/Static_Polymorphism_18_2.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter18/Static_Polymorphism_18_2.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter18\Static_Polymorphism_18_2.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter18
 
-build CMakeFiles/templates_practice.dir/chapter18/Dynamic_versus_Static_Polymorphism_18_3.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter18/Dynamic_versus_Static_Polymorphism_18_3.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter18/Dynamic_versus_Static_Polymorphism_18_3.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter18/Dynamic_versus_Static_Polymorphism_18_3.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter18\Dynamic_versus_Static_Polymorphism_18_3.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter18
 
-build CMakeFiles/templates_practice.dir/chapter18/Using_Concepts_18_4.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter18/Using_Concepts_18_4.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter18/Using_Concepts_18_4.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter18/Using_Concepts_18_4.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter18\Using_Concepts_18_4.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter18
 
-build CMakeFiles/templates_practice.dir/chapter18/New_Forms_of_Design_Patterns_18_5.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter18/New_Forms_of_Design_Patterns_18_5.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter18/New_Forms_of_Design_Patterns_18_5.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter18/New_Forms_of_Design_Patterns_18_5.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter18\New_Forms_of_Design_Patterns_18_5.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter18
 
-build CMakeFiles/templates_practice.dir/chapter18/Generic_Programming_18_6.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter18/Generic_Programming_18_6.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter18/Generic_Programming_18_6.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter18/Generic_Programming_18_6.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter18\Generic_Programming_18_6.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter18
 
-build CMakeFiles/templates_practice.dir/chapter18/Afternotes_18_7.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter18/Afternotes_18_7.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter18/Afternotes_18_7.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter18/Afternotes_18_7.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter18\Afternotes_18_7.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter18
 
-build CMakeFiles/templates_practice.dir/chapter19/An_Example_Accumulating_a_Sequence_19_1.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter19/An_Example_Accumulating_a_Sequence_19_1.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter19/An_Example_Accumulating_a_Sequence_19_1.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter19/An_Example_Accumulating_a_Sequence_19_1.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter19\An_Example_Accumulating_a_Sequence_19_1.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter19
 
-build CMakeFiles/templates_practice.dir/chapter19/Traits_versus_Policies_and_Policy_Classes_19_2.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter19/Traits_versus_Policies_and_Policy_Classes_19_2.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter19/Traits_versus_Policies_and_Policy_Classes_19_2.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter19/Traits_versus_Policies_and_Policy_Classes_19_2.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter19\Traits_versus_Policies_and_Policy_Classes_19_2.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter19
 
-build CMakeFiles/templates_practice.dir/chapter19/Type_Function_19_3.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter19/Type_Function_19_3.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter19/Type_Function_19_3.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter19/Type_Function_19_3.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter19\Type_Function_19_3.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter19
 
-build CMakeFiles/templates_practice.dir/chapter19/SFINAE_Based_Traits_19_4.cpp.obj: CXX_COMPILER__templates_practice_Debug D$:/jetbrainsProj/clionProj/templates_practice/chapter19/SFINAE_Based_Traits_19_4.cpp || cmake_object_order_depends_target_templates_practice
+build CMakeFiles/templates_practice.dir/chapter19/SFINAE_Based_Traits_19_4.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter19/SFINAE_Based_Traits_19_4.cpp || cmake_object_order_depends_target_templates_practice
   DEP_FILE = CMakeFiles\templates_practice.dir\chapter19\SFINAE_Based_Traits_19_4.cpp.obj.d
+  FLAGS = -g -std=gnu++23
+  OBJECT_DIR = CMakeFiles\templates_practice.dir
+  OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter19
+
+build CMakeFiles/templates_practice.dir/chapter19/IsConvertibleT_19_5.cpp.obj: CXX_COMPILER__templates_practice_Debug C$:/Users/yangfeng/CLionProjects/templates_practice/chapter19/IsConvertibleT_19_5.cpp || cmake_object_order_depends_target_templates_practice
+  DEP_FILE = CMakeFiles\templates_practice.dir\chapter19\IsConvertibleT_19_5.cpp.obj.d
   FLAGS = -g -std=gnu++23
   OBJECT_DIR = CMakeFiles\templates_practice.dir
   OBJECT_FILE_DIR = CMakeFiles\templates_practice.dir\chapter19
@@ -453,7 +459,7 @@ build CMakeFiles/templates_practice.dir/chapter19/SFINAE_Based_Traits_19_4.cpp.o
 #############################################
 # Link the executable templates_practice.exe
 
-build templates_practice.exe: CXX_EXECUTABLE_LINKER__templates_practice_Debug CMakeFiles/templates_practice.dir/chapter1/ch_1_function_templates.cpp.obj CMakeFiles/templates_practice.dir/chapter1/default_args_of_template_1.4.cpp.obj CMakeFiles/templates_practice.dir/chapter1/overload_function_template_1.5.cpp.obj CMakeFiles/templates_practice.dir/chapter2/template_stack_2.1.cpp.obj CMakeFiles/templates_practice.dir/chapter2/partially_use_class_template_2.3.cpp.obj CMakeFiles/templates_practice.dir/chapter2/specialization_template_class_2.5.cpp.obj CMakeFiles/templates_practice.dir/chapter2/partial_specialization_template_class_2.6.cpp.obj CMakeFiles/templates_practice.dir/chapter2/default_template_args_2.7.cpp.obj CMakeFiles/templates_practice.dir/chapter2/type_aliases_2.8.cpp.obj CMakeFiles/templates_practice.dir/chapter2/decltype_for_class_template_2.9.cpp.obj CMakeFiles/templates_practice.dir/chapter2/templatized_aggregates_2.10.cpp.obj CMakeFiles/templates_practice.dir/chapter3/noneType_class_template_parameters_3.1.cpp.obj CMakeFiles/templates_practice.dir/chapter3/Nontype_Function_Template_Parameters_3.2.cpp.obj CMakeFiles/templates_practice.dir/chapter3/Restrictions_for_Nontype_Template_Parameters_3.3.cpp.obj CMakeFiles/templates_practice.dir/chapter3/Template_Parameter_Type_auto_3.4.cpp.obj CMakeFiles/templates_practice.dir/chapter4/fold_experssions_4.2.cpp.obj CMakeFiles/templates_practice.dir/chapter4/variadic_templates_4.1.cpp.obj CMakeFiles/templates_practice.dir/chapter4/Application_of_Variadic_Templates_4.3.cpp.obj CMakeFiles/templates_practice.dir/chapter4/Variadic_Class_Templates_and_Variadic_Expressions_4.4.cpp.obj CMakeFiles/templates_practice.dir/chapter5/Keyword_typename_5.1.cpp.obj CMakeFiles/templates_practice.dir/chapter5/Zero_Initialization_5.2.cpp.obj CMakeFiles/templates_practice.dir/chapter5/Using_this_operator_arrow_5.3.cpp.obj CMakeFiles/templates_practice.dir/chapter5/Templates_for_Raw_Arrays_and_String_Literals_5.4.cpp.obj CMakeFiles/templates_practice.dir/chapter5/Member_Templates_5.5.cpp.obj CMakeFiles/templates_practice.dir/chapter5/Variable_Templates_5.6.cpp.obj CMakeFiles/templates_practice.dir/chapter5/Template_Template_Parameters_5.7.cpp.obj CMakeFiles/templates_practice.dir/chapter6/Perfect_Forwarding_6.1.cpp.obj CMakeFiles/templates_practice.dir/chapter6/Special_Member_Function_Templates_6.2.cpp.obj CMakeFiles/templates_practice.dir/chapter6/Disable_templates_with_enable_if_6.3.cpp.obj CMakeFiles/templates_practice.dir/chapter6/Using_enable_if_6.4.cpp.obj CMakeFiles/templates_practice.dir/chapter6/Using_Concepts_to_Simplify_enable_if_6.5.cpp.obj CMakeFiles/templates_practice.dir/chapter7/Passing_by_Value_7.1.cpp.obj CMakeFiles/templates_practice.dir/chapter7/Passing_by_Reference_7.2.cpp.obj CMakeFiles/templates_practice.dir/chapter7/Using_std_ref_and_std_cref_7.3.cpp.obj CMakeFiles/templates_practice.dir/chapter7/Dealing_with_String_Literals_and_Raw_Arrays_7.4.cpp.obj CMakeFiles/templates_practice.dir/chapter7/Dealing_with_Return_Values_7.5.cpp.obj CMakeFiles/templates_practice.dir/chapter7/Recommended_Template_Parameter_Declarations_7.6.cpp.obj CMakeFiles/templates_practice.dir/chapter8/Template_Meta_programming_8.1.cpp.obj CMakeFiles/templates_practice.dir/chapter8/Computing_with_constexpr_8.2.cpp.obj CMakeFiles/templates_practice.dir/chapter8/Execution_Path_Selection_with_Partial_Specialization_8.3.cpp.obj CMakeFiles/templates_practice.dir/chapter8/SFINAE_Substitution_Failure_Is_Not_An_Error_8.4.cpp.obj CMakeFiles/templates_practice.dir/chapter8/compile_time_if_8.5.cpp.obj CMakeFiles/templates_practice.dir/chapter9/The_Inclusion_Model_9.1.cpp.obj CMakeFiles/templates_practice.dir/chapter9/myfirst.cpp.obj CMakeFiles/templates_practice.dir/chapter9/Templates_and_inline_9.2.cpp.obj CMakeFiles/templates_practice.dir/chapter9/Precompiled_Headers_9.3.cpp.obj CMakeFiles/templates_practice.dir/chapter9/Decoding_the_Error_Novel_9.4.cpp.obj CMakeFiles/templates_practice.dir/chapter9/Afternotes_9.5.cpp.obj CMakeFiles/templates_practice.dir/chapter10/Class_Template_or_Template_Class_10.1.cpp.obj CMakeFiles/templates_practice.dir/chapter11/Callables_11_1.cpp.obj CMakeFiles/templates_practice.dir/chapter11/Other_Utilities_to_Implement_Generic_Libraries_11_2.cpp.obj CMakeFiles/templates_practice.dir/chapter11/Perfect_Forwarding_Temporaries_11_3.cpp.obj CMakeFiles/templates_practice.dir/chapter11/References_as_Template_Parameters_11_4.cpp.obj CMakeFiles/templates_practice.dir/chapter11/Defer_Evaluations_11_5.cpp.obj CMakeFiles/templates_practice.dir/chapter11/Things_to_Consider_When_Writting_Generic_Libraries_11_6.cpp.obj CMakeFiles/templates_practice.dir/chapter18/Dynamic_Polymorphism_18_1.cpp.obj CMakeFiles/templates_practice.dir/chapter18/Static_Polymorphism_18_2.cpp.obj CMakeFiles/templates_practice.dir/chapter18/Dynamic_versus_Static_Polymorphism_18_3.cpp.obj CMakeFiles/templates_practice.dir/chapter18/Using_Concepts_18_4.cpp.obj CMakeFiles/templates_practice.dir/chapter18/New_Forms_of_Design_Patterns_18_5.cpp.obj CMakeFiles/templates_practice.dir/chapter18/Generic_Programming_18_6.cpp.obj CMakeFiles/templates_practice.dir/chapter18/Afternotes_18_7.cpp.obj CMakeFiles/templates_practice.dir/chapter19/An_Example_Accumulating_a_Sequence_19_1.cpp.obj CMakeFiles/templates_practice.dir/chapter19/Traits_versus_Policies_and_Policy_Classes_19_2.cpp.obj CMakeFiles/templates_practice.dir/chapter19/Type_Function_19_3.cpp.obj CMakeFiles/templates_practice.dir/chapter19/SFINAE_Based_Traits_19_4.cpp.obj
+build templates_practice.exe: CXX_EXECUTABLE_LINKER__templates_practice_Debug CMakeFiles/templates_practice.dir/chapter1/ch_1_function_templates.cpp.obj CMakeFiles/templates_practice.dir/chapter1/default_args_of_template_1.4.cpp.obj CMakeFiles/templates_practice.dir/chapter1/overload_function_template_1.5.cpp.obj CMakeFiles/templates_practice.dir/chapter2/template_stack_2.1.cpp.obj CMakeFiles/templates_practice.dir/chapter2/partially_use_class_template_2.3.cpp.obj CMakeFiles/templates_practice.dir/chapter2/specialization_template_class_2.5.cpp.obj CMakeFiles/templates_practice.dir/chapter2/partial_specialization_template_class_2.6.cpp.obj CMakeFiles/templates_practice.dir/chapter2/default_template_args_2.7.cpp.obj CMakeFiles/templates_practice.dir/chapter2/type_aliases_2.8.cpp.obj CMakeFiles/templates_practice.dir/chapter2/decltype_for_class_template_2.9.cpp.obj CMakeFiles/templates_practice.dir/chapter2/templatized_aggregates_2.10.cpp.obj CMakeFiles/templates_practice.dir/chapter3/noneType_class_template_parameters_3.1.cpp.obj CMakeFiles/templates_practice.dir/chapter3/Nontype_Function_Template_Parameters_3.2.cpp.obj CMakeFiles/templates_practice.dir/chapter3/Restrictions_for_Nontype_Template_Parameters_3.3.cpp.obj CMakeFiles/templates_practice.dir/chapter3/Template_Parameter_Type_auto_3.4.cpp.obj CMakeFiles/templates_practice.dir/chapter4/fold_experssions_4.2.cpp.obj CMakeFiles/templates_practice.dir/chapter4/variadic_templates_4.1.cpp.obj CMakeFiles/templates_practice.dir/chapter4/Application_of_Variadic_Templates_4.3.cpp.obj CMakeFiles/templates_practice.dir/chapter4/Variadic_Class_Templates_and_Variadic_Expressions_4.4.cpp.obj CMakeFiles/templates_practice.dir/chapter5/Keyword_typename_5.1.cpp.obj CMakeFiles/templates_practice.dir/chapter5/Zero_Initialization_5.2.cpp.obj CMakeFiles/templates_practice.dir/chapter5/Using_this_operator_arrow_5.3.cpp.obj CMakeFiles/templates_practice.dir/chapter5/Templates_for_Raw_Arrays_and_String_Literals_5.4.cpp.obj CMakeFiles/templates_practice.dir/chapter5/Member_Templates_5.5.cpp.obj CMakeFiles/templates_practice.dir/chapter5/Variable_Templates_5.6.cpp.obj CMakeFiles/templates_practice.dir/chapter5/Template_Template_Parameters_5.7.cpp.obj CMakeFiles/templates_practice.dir/chapter6/Perfect_Forwarding_6.1.cpp.obj CMakeFiles/templates_practice.dir/chapter6/Special_Member_Function_Templates_6.2.cpp.obj CMakeFiles/templates_practice.dir/chapter6/Disable_templates_with_enable_if_6.3.cpp.obj CMakeFiles/templates_practice.dir/chapter6/Using_enable_if_6.4.cpp.obj CMakeFiles/templates_practice.dir/chapter6/Using_Concepts_to_Simplify_enable_if_6.5.cpp.obj CMakeFiles/templates_practice.dir/chapter7/Passing_by_Value_7.1.cpp.obj CMakeFiles/templates_practice.dir/chapter7/Passing_by_Reference_7.2.cpp.obj CMakeFiles/templates_practice.dir/chapter7/Using_std_ref_and_std_cref_7.3.cpp.obj CMakeFiles/templates_practice.dir/chapter7/Dealing_with_String_Literals_and_Raw_Arrays_7.4.cpp.obj CMakeFiles/templates_practice.dir/chapter7/Dealing_with_Return_Values_7.5.cpp.obj CMakeFiles/templates_practice.dir/chapter7/Recommended_Template_Parameter_Declarations_7.6.cpp.obj CMakeFiles/templates_practice.dir/chapter8/Template_Meta_programming_8.1.cpp.obj CMakeFiles/templates_practice.dir/chapter8/Computing_with_constexpr_8.2.cpp.obj CMakeFiles/templates_practice.dir/chapter8/Execution_Path_Selection_with_Partial_Specialization_8.3.cpp.obj CMakeFiles/templates_practice.dir/chapter8/SFINAE_Substitution_Failure_Is_Not_An_Error_8.4.cpp.obj CMakeFiles/templates_practice.dir/chapter8/compile_time_if_8.5.cpp.obj CMakeFiles/templates_practice.dir/chapter9/The_Inclusion_Model_9.1.cpp.obj CMakeFiles/templates_practice.dir/chapter9/myfirst.cpp.obj CMakeFiles/templates_practice.dir/chapter9/Templates_and_inline_9.2.cpp.obj CMakeFiles/templates_practice.dir/chapter9/Precompiled_Headers_9.3.cpp.obj CMakeFiles/templates_practice.dir/chapter9/Decoding_the_Error_Novel_9.4.cpp.obj CMakeFiles/templates_practice.dir/chapter9/Afternotes_9.5.cpp.obj CMakeFiles/templates_practice.dir/chapter10/Class_Template_or_Template_Class_10.1.cpp.obj CMakeFiles/templates_practice.dir/chapter11/Callables_11_1.cpp.obj CMakeFiles/templates_practice.dir/chapter11/Other_Utilities_to_Implement_Generic_Libraries_11_2.cpp.obj CMakeFiles/templates_practice.dir/chapter11/Perfect_Forwarding_Temporaries_11_3.cpp.obj CMakeFiles/templates_practice.dir/chapter11/References_as_Template_Parameters_11_4.cpp.obj CMakeFiles/templates_practice.dir/chapter11/Defer_Evaluations_11_5.cpp.obj CMakeFiles/templates_practice.dir/chapter11/Things_to_Consider_When_Writting_Generic_Libraries_11_6.cpp.obj CMakeFiles/templates_practice.dir/chapter18/Dynamic_Polymorphism_18_1.cpp.obj CMakeFiles/templates_practice.dir/chapter18/Static_Polymorphism_18_2.cpp.obj CMakeFiles/templates_practice.dir/chapter18/Dynamic_versus_Static_Polymorphism_18_3.cpp.obj CMakeFiles/templates_practice.dir/chapter18/Using_Concepts_18_4.cpp.obj CMakeFiles/templates_practice.dir/chapter18/New_Forms_of_Design_Patterns_18_5.cpp.obj CMakeFiles/templates_practice.dir/chapter18/Generic_Programming_18_6.cpp.obj CMakeFiles/templates_practice.dir/chapter18/Afternotes_18_7.cpp.obj CMakeFiles/templates_practice.dir/chapter19/An_Example_Accumulating_a_Sequence_19_1.cpp.obj CMakeFiles/templates_practice.dir/chapter19/Traits_versus_Policies_and_Policy_Classes_19_2.cpp.obj CMakeFiles/templates_practice.dir/chapter19/Type_Function_19_3.cpp.obj CMakeFiles/templates_practice.dir/chapter19/SFINAE_Based_Traits_19_4.cpp.obj CMakeFiles/templates_practice.dir/chapter19/IsConvertibleT_19_5.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\templates_practice.dir
@@ -468,7 +474,7 @@ build templates_practice.exe: CXX_EXECUTABLE_LINKER__templates_practice_Debug CM
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\jetbrainsProj\clionProj\templates_practice\cmake-build-debug && D:\programFiles\JetBrains\Toolbox\apps\CLion\ch-0\222.3345.126\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D C:\Users\yangfeng\CLionProjects\templates_practice\cmake-build-debug && C:\Users\yangfeng\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\222.3345.126\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -479,7 +485,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\jetbrainsProj\clionProj\templates_practice\cmake-build-debug && D:\programFiles\JetBrains\Toolbox\apps\CLion\ch-0\222.3345.126\bin\cmake\win\bin\cmake.exe --regenerate-during-build -SD:\jetbrainsProj\clionProj\templates_practice -BD:\jetbrainsProj\clionProj\templates_practice\cmake-build-debug"
+  COMMAND = cmd.exe /C "cd /D C:\Users\yangfeng\CLionProjects\templates_practice\cmake-build-debug && C:\Users\yangfeng\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\222.3345.126\bin\cmake\win\bin\cmake.exe --regenerate-during-build -SC:\Users\yangfeng\CLionProjects\templates_practice -BC:\Users\yangfeng\CLionProjects\templates_practice\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -497,7 +503,7 @@ build templates_practice: phony templates_practice.exe
 # =============================================================================
 
 #############################################
-# Folder: D:/jetbrainsProj/clionProj/templates_practice/cmake-build-debug
+# Folder: C:/Users/yangfeng/CLionProjects/templates_practice/cmake-build-debug
 
 build all: phony templates_practice.exe
 
@@ -508,14 +514,14 @@ build all: phony templates_practice.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeRCCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeCInformation.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeCXXInformation.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeGenericSystem.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeRCInformation.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-C.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX-ABI.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-windres.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/WindowsPaths.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeCInformation.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeCXXInformation.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeGenericSystem.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeRCInformation.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-C.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-windres.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeRCCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeRCCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeCInformation.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeCXXInformation.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeGenericSystem.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeRCInformation.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-C.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX-ABI.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-windres.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows.cmake D$:/programFiles/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/WindowsPaths.cmake: phony
+build ../CMakeLists.txt C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeCInformation.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeCXXInformation.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeGenericSystem.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeRCInformation.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-C.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-windres.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows.cmake C$:/Users/yangfeng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3345.126/bin/cmake/win/share/cmake-3.23/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeRCCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake: phony
 
 
 #############################################
