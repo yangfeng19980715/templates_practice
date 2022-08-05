@@ -116,7 +116,6 @@ namespace ch19_5 {
         template<typename FROM, typename TO>
         struct IsConvertibleHelper {
         private:
-        
             // test() trying to call the helper aux(TO) for a FROM passed as F :
             static void aux(TO);
             
@@ -124,13 +123,13 @@ namespace ch19_5 {
             static std::true_type test(void*);
         
             // test() fallback:
-            template<typename, typename>
+            template<typename>
             static std::false_type test(...);
     
         public:
             using Type = decltype(test<FROM>(nullptr));
         };
-    
+     
         template<typename FROM, typename TO>
         struct IsConvertibleT : IsConvertibleHelper<FROM, TO>::Type { };
     
@@ -143,13 +142,73 @@ namespace ch19_5 {
         void test() {
             cout << std::boolalpha;
             cout << isConvertible<int, int> << endl;
-//             cout << isConvertible<int, std::string> << endl;
+            cout << isConvertible<int, std::string> << endl;
             cout << isConvertible<char const *, std::string> << endl;
-//             cout << isConvertible<std::string, char const *> << endl;
+            cout << isConvertible<std::string, char const *> << endl;
         }
     }
     
+    /*
+处理特殊情况
+    下面 3 种情况还不能被上面的 IsConvertibleT 正确处理：
+    1.
+    向数组类型的转换要始终返回 false，但是在上面的代码中，aux()声明中的类型为 TO 的
+    参数会退化成指针类型，因此对于某些 FROM 类型，它会返回 true。
+    2.
+    向指针类型的转换也应该始终返回 false，但是和 1 中的情况一样，上述实现只会将它
+    们当作退化后的类型。
+    3.
+    向（被 const/volatile 修饰）的 void 类型的转换需要返回 true。但是不幸的是，在 TO 是
+    五车书馆
+    215
+    void 的时候，上述实现甚至不能被正确实例化，因为参数类型不能包含 void 类型（而
+    且 aux()的定义也用到了这一参数）。
+    对于这几种情况，我们需要对它们进行额外的偏特化。但是，为所有可能的与 const 以及
+    volatile 的组合情况都分别进行偏特化是很不明智的。相反，我们为辅助类模板引入了一个
+    额外的模板参数:
+    template<typename FROM, typename TO, bool = IsVoidT<TO>::value ||
+    IsArrayT<TO>::value || IsFunctionT<TO>::value>
+    struct IsConvertibleHelper {
+    using Type = std::integral_constant<bool, IsVoidT<TO>::value &&
+    IsVoidT<FROM>::value>;
+    };
+    template<typename FROM, typename TO>
+    struct IsConvertibleHelper<FROM,TO,false> {
+    … //previous implementation of IsConvertibleHelper here
+    };
+    额外的 bool 型模板参数能够保证，对于上面的所有特殊情况，都会最终使用主辅助萃取（而
+    不是偏特化版本）。如果我们试图将 FROM 转换为数组或者函数，或者 FROM 是 void 而 TO
+    不是，都会得到 false_type 的结果，不过对于 FROM 和 TO 都是 false_type 的情况，它也会返
+    回 false_type。其它所有的情况，都会使第三个模板参数为 false，从而选择偏特化版本的实
+    现（对应于我们之前介绍的实现）。
+    至于 IsArrayT 和 IsFunctionT 的实现，请分别参见第 19.8.2 节和第 19.8.3 节。
+    C++标准库中也提供了与之对应的 std::is_convertible<>，具体请参见第 D.3.3 节。
+     */
     namespace case2 {
+        template<typename FROM, typename TO, bool = std::is_void<TO>::value ||
+                                                    std::is_array<TO>::value || std::is_function<TO>::value>
+        struct IsConvertibleHelper {
+            using Type = std::integral_constant<bool, std::is_void<TO>::value &&
+                                                      std::is_void<FROM>::value>;
+        };
+        
+        template<typename FROM, typename TO>
+        struct IsConvertibleHelper<FROM, TO, false> {
+        private:
+            // test() trying to call the helper aux(TO) for a FROM passed as F :
+            static void aux(TO);
+        
+            template<typename F, typename = decltype(aux(std::declval<F>()))>
+            static std::true_type test(void*);
+        
+            // test() fallback:
+            template<typename>
+            static std::false_type test(...);
+    
+        public:
+            using Type = decltype(test<FROM>(nullptr));
+        };
+    
     }
     
     namespace case3 {
@@ -170,8 +229,8 @@ namespace ch19_5 {
 }
 
 int
-main()
-//main_IsConvertibleT_19_5()
+//main()
+main_IsConvertibleT_19_5()
 {
     ch19_5::case1::test();
 
