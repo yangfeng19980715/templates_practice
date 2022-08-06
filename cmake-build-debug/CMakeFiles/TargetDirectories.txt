@@ -1,3 +1,0 @@
-D:/jetbrainsProj/clionProj/templates_practice/cmake-build-debug/CMakeFiles/templates_practice.dir
-D:/jetbrainsProj/clionProj/templates_practice/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/jetbrainsProj/clionProj/templates_practice/cmake-build-debug/CMakeFiles/rebuild_cache.dir

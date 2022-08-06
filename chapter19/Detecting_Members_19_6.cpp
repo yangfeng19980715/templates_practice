@@ -13,7 +13,7 @@
     #include <type_traits>
     // defines true_type and false_type
     // helper to ignore any number of template parameters:
-    template<typename …> using VoidT = void;
+    template<typename ...> using VoidT = void;
     五车书馆
     216
     // primary template:
@@ -103,13 +103,13 @@
     int main()
     {
     std::cout << "int::value_type: " << HasTypeT_value_type<int>::value
-    << ’\n’;
+    << endl;
     std::cout << "std::vector<int>::value_type: " <<
-    HasTypeT_value_type<std::vector<int>>::value << ’\n’;
+    HasTypeT_value_type<std::vector<int>>::value << endl;
     std::cout << "std::iostream::value_type: " <<
-    HasTypeT_value_type<std::iostream>::value << ’\n’;
+    HasTypeT_value_type<std::iostream>::value << endl;
     std::cout << "std::iostream::char_type: " <<
-    HasTypeT_char_type<std::iostream>::value << ’\n’;
+    HasTypeT_char_type<std::iostream>::value << endl;
     }
     19.6.3 探测非类型成员
     可以继续修改上述萃取，以让其能够测试数据成员和（单个的）成员函数：
@@ -146,11 +146,11 @@
     DEFINE_HAS_MEMBER(first);
     int main()
     {
-    std::cout << "int::size: " << HasMemberT_size<int>::value << ’\n’;
+    std::cout << "int::size: " << HasMemberT_size<int>::value << endl;
     std::cout << "std::vector<int>::size: " <<
-    HasMemberT_size<std::vector<int>>::value << ’\n’;
+    HasMemberT_size<std::vector<int>>::value << endl;
     std::cout << "std::pair<int,int>::first: " <<
-    HasMemberT_first<std::pair<int,int>>::value << ’\n’;
+    HasMemberT_first<std::pair<int,int>>::value << endl;
     }
     修改上面的偏特化实现以排除那些&T::Member 不是成员指针的情况（比如排除 static 数据
     成员的情况）并不会很难。类似地，也可以限制该偏特化仅适用于数据成员或者成员函数。
@@ -217,7 +217,7 @@
     {
     static_assert(HasLessT<T>::value, "Class C requires comparable
     elements");
-    …
+    ...
     };
     值得注意的是，基于 std::void_t 的特性，我们可以将多个限制条件放在同一个萃取中：
     #include <utility> // for declval
@@ -255,7 +255,7 @@
     // define to check for data member first:
     constexpr auto hasFirst = isValid([](auto x) ->
     decltype((void)valueT(x).first) {});
-    cout << "hasFirst: " << hasFirst(type<pair<int,int>>) << ’\n’; //
+    cout << "hasFirst: " << hasFirst(type<pair<int,int>>) << endl; //
     true
     // define to check for member type size_type:
     constexpr auto hasSizeType = isValid([](auto x) -> typename
@@ -263,20 +263,20 @@
     struct CX {
     using size_type = std::size_t;
     };
-    cout << "hasSizeType: " << hasSizeType(type<CX>) << ’\n’; // true
+    cout << "hasSizeType: " << hasSizeType(type<CX>) << endl; // true
     if constexpr(!hasSizeType(type<int>)) {
     cout << "int has no size_type\n";
-    …
+    ...
     }
     // define to check for <:
     constexpr auto hasLess = isValid([](auto x, auto y) ->
     decltype(valueT(x) < valueT(y)) {});
-    cout << hasLess(42, type<char>) << ’\n’; //yields true
-    cout << hasLess(type<string>, type<string>) << ’\n’; //yields true
+    cout << hasLess(42, type<char>) << endl; //yields true
+    cout << hasLess(type<string>, type<string>) << endl; //yields true
     五车书馆
     223
-    cout << hasLess(type<string>, type<int>) << ’\n’; //yields false
-    cout << hasLess(type<string>, "hello") << ’\n’; //yields true
+    cout << hasLess(type<string>, type<int>) << endl; //yields false
+    cout << hasLess(type<string>, "hello") << endl; //yields true
     }
     请再次注意，hasSizeType 通过使用 std::decay 将参数 x 中的引用删除了，因为我们不能访问
     引用中的类型成员。如果不这么做，该萃取（对于引用类型）会始终返回 false，从而导致
@@ -303,19 +303,19 @@
     int main()
     {
     using namespace std;
-    cout << "first: " << HasFirstT<pair<int,int>>::value << ’\n’;
+    cout << "first: " << HasFirstT<pair<int,int>>::value << endl;
     // true
     struct CX {
     using size_type = std::size_t;
     };
-    cout << "size_type: " << HasSizeTypeT<CX>::value << ’\n’; // true
-    cout << "size_type: " << HasSizeTypeT<int>::value << ’\n’; // false
+    cout << "size_type: " << HasSizeTypeT<CX>::value << endl; // true
+    cout << "size_type: " << HasSizeTypeT<int>::value << endl; // false
     五车书馆
     224
-    cout << HasLessT<int, char>::value << ’\n’; // true
-    cout << HasLessT<string, string>::value << ’\n’; // true
-    cout << HasLessT<string, int>::value << ’\n’; // false
-    cout << HasLessT<string, char*>::value << ’\n’; // true
+    cout << HasLessT<int, char>::value << endl; // true
+    cout << HasLessT<string, string>::value << endl; // true
+    cout << HasLessT<string, int>::value << endl; // false
+    cout << HasLessT<string, char*>::value << endl; // true
     }
     现在可以像下面这样使用 HasFirstT：
     HasFirstT<std::pair<int,int>>::value
@@ -337,7 +337,7 @@ namespace ch19_6 {
     #include <type_traits>
     // defines true_type and false_type
     // helper to ignore any number of template parameters:
-    template<typename …> using VoidT = void;
+    template<typename ...> using VoidT = void;
     五车书馆
     216
     // primary template:
@@ -486,13 +486,13 @@ namespace ch19_6 {
         int main()
         {
         std::cout << "int::value_type: " << HasTypeT_value_type<int>::value
-        << ’\n’;
+        << endl;
         std::cout << "std::vector<int>::value_type: " <<
-        HasTypeT_value_type<std::vector<int>>::value << ’\n’;
+        HasTypeT_value_type<std::vector<int>>::value << endl;
         std::cout << "std::iostream::value_type: " <<
-        HasTypeT_value_type<std::iostream>::value << ’\n’;
+        HasTypeT_value_type<std::iostream>::value << endl;
         std::cout << "std::iostream::char_type: " <<
-        HasTypeT_char_type<std::iostream>::value << ’\n’;
+        HasTypeT_char_type<std::iostream>::value << endl;
         }
      */
     
@@ -524,14 +524,371 @@ namespace ch19_6 {
      */
     
     namespace case3 {
+        
+        #define DEFINE_HAS_MEMBER(Member) \
+        template<typename, typename = std::void_t<>> \
+        struct HasMemberT_##Member : std::false_type { }; \
+        template<typename T> \
+        struct HasMemberT_##Member<T, std::void_t<decltype(&T::Member)>> : std::true_type { }   // ; intentionally skipped
+        
+        DEFINE_HAS_MEMBER(size);
+        DEFINE_HAS_MEMBER(first);
+        DEFINE_HAS_MEMBER(begin);
+        
+        // primary template:
+        template<typename, typename = std::void_t<>>
+        struct HasBeginT : std::false_type { };
+        
+        // partial specialization (may be SFINAE’d away):
+        template<typename T>
+        struct HasBeginT<T, std::void_t<decltype(std::declval<T>().begin())>> : std::true_type { };
+        
+        // primary template:
+        template<typename, typename, typename = std::void_t<>>
+        struct HasLessT : std::false_type {};
+        
+        // partial specialization (may be SFINAE’d away):
+        template<typename T1, typename T2>
+        struct HasLessT<T1, T2, std::void_t<decltype(std::declval<T1>() < std::declval<T2>())>>: std::true_type {};
+        
+        //正如在第 2.3.1 节介绍的那样，我们也可以通过使用该萃取去要求模板参数 T 必须要支持 < 运算符：
+        template<typename T>
+        class C
+        {
+            static_assert(HasLessT<T, T>::value, "Class C requires comparable elements");
+        };
+        
+        
+        struct [[maybe_unused]] CTest { int a {0}; int *p {nullptr}; };
+        
+        // primary template:
+        template<typename, typename = std::void_t<>>
+        struct HasVariousT : std::false_type {};
+        
+        // partial specialization (may be SFINAE’d away):
+        template<typename T>
+        struct HasVariousT<T, std::void_t<
+                                        decltype(std::declval<T> ().begin()),
+                                        typename T::difference_type,
+                                        typename T::iterator
+                                        >
+                            > : std::true_type {};
+        
+        void test() {
+            cout << boolalpha;
+            std::cout << "\tint::size: " << HasMemberT_size<int>::value << endl;
+            std::cout << "\tstd::vector<int>::size: " << HasMemberT_size<std::vector<int>>::value << endl;
+            std::cout << "\tstd::pair<int,int>::first: " << HasMemberT_first<std::pair<int, int>>::value << endl;
+            /*
+           注意，HasMember 萃取只可以被用来测试是否存在“唯一”一个与特定名称对应的成员。
+                如果存在两个同名的成员的话，该测试也会失败，比如当我们测试某些重载成员函数是否存
+                在的时候：
+                DEFINE_HAS_MEMBER(begin);
+                std::cout << HasMemberT_begin<std::vector<int>>::value; // false
+            */
+            std::cout << "\tvector<int> has begin():" << HasMemberT_begin<std::vector<int>>::value << endl; // false
+            
+            /*
+            但是，正如在第 8.4.1 节所说的那样，SFINAE 会确保我们不会在函数模板声明中创建非法的
+                类型和表达式，从而我们可以使用重载技术进一步测试某个表达式是否是病态的。
+                也就是说，可以很简单地测试我们能否按照某种形式调用我们所感兴趣的函数，即使该函数
+                被重载了，相关调用可以成功。正如在第 19.5 节介绍的 IsConvertibleT 一样，此处的关键是
+                能否构造一个表达式，以测试我们能否在 decltype 中调用 begin()，并将该表达式用作额外
+                的模板参数的默认值：
+                #include <utility> // for declval
+                #include <type_traits> // for true_type, false_type, and void_t
+                // primary template:
+                template<typename, typename = std::void_t<>>
+                struct HasBeginT : std::false_type {
+                };
+                // partial specialization (may be SFINAE’d away):
+                template<typename T>
+                struct HasBeginT<T, std::void_t<decltype(std::declval<T>
+                ().begin())>> : std::true_type {
+                };
+                这里我们使用 decltype(std::declval<T> ().begin())来测试是否能够调用 T 的
+                begin()。
+             */
     
+            cout << "\ndetect member function:" << endl;
+            cout << "\tvector<int> HasBeginT: " << HasBeginT<vector<int>>::value << endl;
+            
+            /*
+        相同的技术还可以被用于其它的表达式，甚至是多个表达式的组合。比如，我们可以测试对
+            类型为 T1 和 T2 的对象，是否有合适的<运算符可用：
+            #include <utility> // for declval
+            #include <type_traits> // for true_type, false_type, and void_t
+            // primary template:
+            template<typename, typename, typename = std::void_t<>>
+            struct HasLessT : std::false_type
+            {};
+            // partial specialization (may be SFINAE’d away):
+            template<typename T1, typename T2>
+            struct HasLessT<T1, T2, std::void_t<decltype(std::declval<T1>() <
+            std::declval<T2>())>>: std::true_type
+            {};
+            和往常一样，问题的难点在于该如果为所要测试的条件定义一个有效的表达式，并通过使用
+            decltype 将其放入 SFINAE 的上下文中，在该表达式无效的时候，SFINAE 机制会让我们最终
+            五车书馆
+            221
+            选择主模板：
+            decltype(std::declval<T1>() < std::declval<T2>())
+            采用这种方式探测表达式有效性的萃取是很稳健的：如果表达式没有问题，它会返回 true，
+            而如果<运算符有歧义，被删除，或者不可访问的话，它也可以准确的返回 false。
+            我们可以像下面这样使用萃取：
+            HasLessT<int, char>::value //yields true
+            HasLessT<std::string, std::string>::value //yields true
+            HasLessT<std::string, int>::value //yields false
+            HasLessT<std::string, char*>::value //yields
+            trueHasLessT<std::complex<double>,
+            std::complex<double>>::value //yields false
+            正如在第 2.3.1 节介绍的那样，我们也可以通过使用该萃取去要求模板参数 T 必须要支持<
+            运算符：
+            template<typename T>
+            class C
+            {
+            static_assert(HasLessT<T>::value, "Class C requires comparable
+            elements");
+            ...
+            };
+            值得注意的是，基于 std::void_t 的特性，我们可以将多个限制条件放在同一个萃取中：
+            #include <utility> // for declval
+            #include <type_traits> // for true_type, false_type, and void_t
+            // primary template:
+            template<typename, typename = std::void_t<>>
+            struct HasVariousT : std::false_type
+            {};
+            // partial specialization (may be SFINAE’d away):
+            template<typename T>
+            struct HasVariousT<T, std::void_t<decltype(
+            std::declval<T> ().begin()),
+            typename T::difference_type,
+            typename T::iterator>> :
+            std::true_type
+            {};
+            能够测试某一语法特性有效性的萃取是很有用的，基于有或者没有某一特定操作，可以用该
+            萃取去客制化模板的行为。这一类萃取既可以被用于 SFINAE 友好的萃取（第 19.4.4 节）的
+            一部分，也可以为基于类型特性的重载（第 20 章）提供帮助
+             */
+    
+            cout << "\ndetect other expression:" << endl;
+            cout << "\tHasLessT<int, double>::value:\t" << HasLessT<int, double>::value << endl;
+            cout << "\tHasLessT<float, double>::value:\t" << HasLessT<float, double>::value << endl;
+            cout << "\tHasLessT<const char *, double>::value:\t" << HasLessT<const char *, double>::value << endl;
+            cout << "\tHasLessT<const char *, double>::value:\t" << HasLessT<const char *, double>::value << endl;
+            cout << "\tHasLessT<char, double>::value:\t" << HasLessT<char, double>::value << endl;
+            
+            // cout << "\nRequires CTest comparable elements:" << endl;
+            // C<CTest> c1;
+            
+            /*
+       值得注意的是，基于 std::void_t 的特性，我们可以将多个限制条件放在同一个萃取中：
+            #include <utility> // for declval
+            #include <type_traits> // for true_type, false_type, and void_t
+            // primary template:
+            template<typename, typename = std::void_t<>>
+            struct HasVariousT : std::false_type
+            {};
+            // partial specialization (may be SFINAE’d away):
+            template<typename T>
+            struct HasVariousT<T, std::void_t<decltype(
+            std::declval<T> ().begin()),
+            typename T::difference_type,
+            typename T::iterator>> :
+            std::true_type
+            {};
+            能够测试某一语法特性有效性的萃取是很有用的，基于有或者没有某一特定操作，可以用该
+            萃取去客制化模板的行为。这一类萃取既可以被用于 SFINAE 友好的萃取（第 19.4.4 节）的
+            一部分，也可以为基于类型特性的重载（第 20 章）提供帮助。
+             */
+            
+            
+        }
+        
     }
     
+    /*
+19.6.4 用泛型 Lambda 探测成员
+    在第 19.4.3 节介绍的 isValid lambda，提供了一种定义可以被用来测试成员的更为紧凑的技
+    术，其主要的好处是在处理名称任意的成员时，不需要使用宏。
+    下面这个例子展示了定义可以检测数据或者类型成员是否存在（比如 first 或者 size_type），
+    或者有没有为两个不同类型的对象定义 operator <的萃取的方式：
+    #include "isvalid.hpp"
+    #include<iostream>
+    #include<string>
+    #include<utility>
+    int main()
+    {
+    using namespace std;
+    cout << boolalpha;
+    // define to check for data member first:
+    constexpr auto hasFirst = isValid([](auto x) ->
+    decltype((void)valueT(x).first) {});
+    cout << "hasFirst: " << hasFirst(type<pair<int,int>>) << endl; //
+    true
+    // define to check for member type size_type:
+    constexpr auto hasSizeType = isValid([](auto x) -> typename
+    decltype(valueT(x))::size_type { });
+    struct CX {
+    using size_type = std::size_t;
+    };
+    cout << "hasSizeType: " << hasSizeType(type<CX>) << endl; // true
+    if constexpr(!hasSizeType(type<int>)) {
+    cout << "int has no size_type\n";
+    ...
+    }
+    // define to check for <:
+    constexpr auto hasLess = isValid([](auto x, auto y) ->
+    decltype(valueT(x) < valueT(y)) {});
+    cout << hasLess(42, type<char>) << endl; //yields true
+    cout << hasLess(type<string>, type<string>) << endl; //yields true
+    五车书馆
+    223
+    cout << hasLess(type<string>, type<int>) << endl; //yields false
+    cout << hasLess(type<string>, "hello") << endl; //yields true
+    }
+    请再次注意，hasSizeType 通过使用 std::decay 将参数 x 中的引用删除了，因为我们不能访问
+    引用中的类型成员。如果不这么做，该萃取（对于引用类型）会始终返回 false，从而导致
+    第二个重载的 isValidImpl<>被使用。
+    为了能够使用统一的泛型语法（将类型用于模板参数），我们可以继续定义额外的辅助工具。
+    比如：
+    #include "isvalid.hpp"
+    #include<iostream>
+    #include<string>
+    #include<utility>
+    constexpr auto hasFirst
+    = isValid([](auto&& x) -> decltype((void)&x.first) {});
+    template<typename T>
+    using HasFirstT = decltype(hasFirst(std::declval<T>()));
+    constexpr auto hasSizeType = isValid([](auto&& x) -> typename
+    std::decay_t<decltype(x)>::size_type {});
+    template<typename T>
+    using HasSizeTypeT = decltype(hasSizeType(std::declval<T>()));
+    constexpr auto hasLess = isValid([](auto&& x, auto&& y) -> decltype(x
+    < y) { });
+    template<typename T1, typename T2>
+    using HasLessT = decltype(hasLess(std::declval<T1>(),
+    std::declval<T2>()));
+    int main()
+    {
+    using namespace std;
+    cout << "first: " << HasFirstT<pair<int,int>>::value << endl;
+    // true
+    struct CX {
+    using size_type = std::size_t;
+    };
+    cout << "size_type: " << HasSizeTypeT<CX>::value << endl; // true
+    cout << "size_type: " << HasSizeTypeT<int>::value << endl; // false
+    五车书馆
+    224
+    cout << HasLessT<int, char>::value << endl; // true
+    cout << HasLessT<string, string>::value << endl; // true
+    cout << HasLessT<string, int>::value << endl; // false
+    cout << HasLessT<string, char*>::value << endl; // true
+    }
+    现在可以像下面这样使用 HasFirstT：
+    HasFirstT<std::pair<int,int>>::value
+    它会为一个包含两个 int 的 pair 调用 hasFirst，其行为和之前的讨论一致。
+     */
+    
     namespace case4 {
+        
+        // helper: checking validity of f (args...) for F f and Args... args:
+        template<typename F, typename... Args, typename = decltype(std::declval<F>() (std::declval<Args&&>()...))>
+        std::true_type isValidImpl(void*);
+        
+        // fallback if helper SFINAE’d out:
+        template<typename F, typename... Args>
+        std::false_type isValidImpl(...);
+        
+        // define a lambda that takes a lambda f and returns whether calling f with args is valid
+        /*
+        先从 isValid 的定义开始：它是一个类型为 lambda 闭包的 constexpr 变量。声明中必须要使
+            用一个占位类型（placeholder type，代码中的 auto），因为 C++没有办法直接表达一个闭包
+            类型。在 C++17 之前，lambda 表达式不能出现在 const 表达式中，因此上述代码只有在 C++17
+            中才有效。因为 isValid 是闭包类型的，因此它可以被调用，但是它被调用之后返回的依然
+            是一个闭包类型，返回结果由内部的 lambda 表达式生成。
+            isValid 是一个萃取工厂（traits factory）：它会为其参数生成萃取，并用生成的萃取对对象进行测试。
+         */
+        inline constexpr
+        auto isValid = [](auto f) {
+            return [](auto&&... args) {
+                        return decltype(isValidImpl<decltype(f), decltype(args) && ...>(nullptr)){};
+                    };
+        };
+        
+        // helper template to represent a type as a value
+        template<typename T>
+        struct TypeT { using Type = T; };
+        
+        // helper to wrap a type as a value
+        // 允许我们用一个值代表一个类型, 对于通过这种方式获得的数值 x，我们可以通过使用 decltype(valueT(x))得到其原始类型，这也正是上面被传递给 isValid 的 lambda 所做的事情。
+        template<typename T>
+        constexpr auto type = TypeT<T>{};
+        
+        // helper to unwrap a wrapped type in unevaluated contexts
+        template<typename T>
+        T valueT(TypeT<T>); // no definition needed
+        
+        void test() {
+            // define to check for data member first:
+            /* // 此处void是显式弃值, 这样就只检查表达式合法，合法的情况下表达式的类型总是void */
+            constexpr auto hasFirst = isValid([](auto x) -> decltype((void)valueT(x).first) {});
+            cout << "hasFirst: " << hasFirst(type<pair<int,int>>) << endl; // true
+            
+            // define to check for member type size_type:
+            constexpr auto hasSizeType = isValid([](auto x) -> typename decltype(valueT(x))::size_type { });
+            
+            struct CX { using size_type = std::size_t; };
+            cout << "hasSizeType: " << hasSizeType(type<CX>) << endl; // true
+            
+            if constexpr (!hasSizeType(type<int>)) {
+                cout << "int has no size_type\n";
+            }
+            
+            // define to check for <:
+            constexpr auto hasLess = isValid([](auto x, auto y) -> decltype(valueT(x) < valueT(y)) {});
+            
+            cout << hasLess(42, type<char>) << endl;                //yields true
+            cout << hasLess(type<string>, type<string>) << endl;    //yields true
+            cout << hasLess(type<string>, type<int>) << endl;       //yields false
+            cout << hasLess(type<string>, "hello") << endl;         //yields true
+            
+        }
+
+        
     }
     
     namespace case5 {
-    
+        constexpr auto hasFirst = case4::isValid([](auto&& x) -> decltype((void)&x.first) {});
+        
+        template<typename T>
+        using HasFirstT = decltype(hasFirst(std::declval<T>()));
+        
+        constexpr auto hasSizeType = case4::isValid([](auto&& x) -> typename std::decay_t<decltype(x)>::size_type {});
+        
+        template<typename T>
+        using HasSizeTypeT = decltype(hasSizeType(std::declval<T>()));
+        
+        constexpr auto hasLess = case4::isValid([](auto&& x, auto&& y) -> decltype(x < y) { });
+        
+        template<typename T1, typename T2>
+        using HasLessT = decltype(hasLess(std::declval<T1>(), std::declval<T2>()));
+        void test()
+        {
+            using namespace std;
+            cout << "first: " << HasFirstT<pair<int,int>>::value << endl;
+            // true
+            struct CX {
+                using size_type = std::size_t;
+            };
+            cout << "size_type: " << HasSizeTypeT<CX>::value << endl; // true
+            cout << "size_type: " << HasSizeTypeT<int>::value << endl; // false
+            cout << HasLessT<int, char>::value << endl; // true
+            cout << HasLessT<string, string>::value << endl; // true
+            cout << HasLessT<string, int>::value << endl; // false
+            cout << HasLessT<string, char*>::value << endl; // true
+        }
     }
 
     class Tmp {
@@ -542,10 +899,10 @@ namespace ch19_6 {
 }
 
 int
-main()
-//main_Detecting_Members_19_6()
+//main()
+main_Detecting_Members_19_6()
 {
-    ch19_6::case2::test();
+    ch19_6::case5::test();
 
     
     return 0;
