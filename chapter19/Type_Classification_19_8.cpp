@@ -10,21 +10,21 @@
     者是其它什么类型，将会很有帮助。在接下来的章节中，我们定义了一组类型萃取，通过它
     们我们可以判断给定类型的各种特性。这样我们就可以单独为特定的某些类型编写代码：
     if (IsClassT<T>::value) {
-    …
+    ...
     }
     或者是将其用于编译期 if（在 C++17 中引入）以及某些为了萃取的便利性而引入的特性（参
     见第 19.7.3 节）：
     if constexpr (IsClass<T>) {
-    …
+    ...
     }
     或者时将其用于偏特化：
     template<typename T, bool = IsClass<T>>
     class C { //primary template for the general case
-    …
+    ...
     };
     template<typename T>
     class C<T, true> { //partial specialization for class types
-    …
+    ...
     };
     此外，诸如 IsPointerT<T>::value 一类的表达式的结果是 bool 型常量，因此它们也将是有效
     的非类型模板参数。这样，就可以构造更为高端和强大的模板，这些模板可以被基于它们的
@@ -227,18 +227,18 @@
     template<typename T>
     struct IsFunctionT : std::false_type { //primary template: no function
     };
-    template<typename R, typename… Params>
-    struct IsFunctionT<R (Params…)> : std::true_type
+    template<typename R, typename... Params>
+    struct IsFunctionT<R (Params...)> : std::true_type
     { //functions
     using Type = R;
-    using ParamsT = Typelist<Params…>;
+    using ParamsT = Typelist<Params...>;
     static constexpr bool variadic = false;
     };
-    template<typename R, typename… Params>
-    struct IsFunctionT<R (Params…, …)> : std::true_type { //variadic
+    template<typename R, typename... Params>
+    struct IsFunctionT<R (Params..., ...)> : std::true_type { //variadic
     functions
     using Type = R;
-    using ParamsT = Typelist<Params…>;
+    using ParamsT = Typelist<Params...>;
     static constexpr bool variadic = true;
     };
     上述实现中函数类型的每一部分都被暴露了出来：返回类型被 Type 标识，所有的参数都被
@@ -255,37 +255,37 @@
     RemoveConst 并不能将 const 从函数类型中移除。因此，为了识别有限制符的函数类型，我
     们需要引入一大批额外的偏特化实现，来覆盖所有可能的限制符组合（每一个实现都需要包
     含 C 风格和非 C 风格的可变参数情况）。这里，我们只展示所有偏特化实现中的 5 中情况：
-    template<typename R, typename… Params>
-    struct IsFunctionT<R (Params…) const> : std::true_type {
+    template<typename R, typename... Params>
+    struct IsFunctionT<R (Params...) const> : std::true_type {
     using Type = R;
-    using ParamsT = Typelist<Params…>;
+    using ParamsT = Typelist<Params...>;
     static constexpr bool variadic = false;
     };
-    template<typename R, typename… Params>
-    struct IsFunctionT<R (Params…, …) volatile> : std::true_type {
+    template<typename R, typename... Params>
+    struct IsFunctionT<R (Params..., ...) volatile> : std::true_type {
     using Type = R;
-    using ParamsT = Typelist<Params…>;
+    using ParamsT = Typelist<Params...>;
     static constexpr bool variadic = true;
     };
-    template<typename R, typename… Params>
-    struct IsFunctionT<R (Params…, …) const volatile> : std::true_type {
+    template<typename R, typename... Params>
+    struct IsFunctionT<R (Params..., ...) const volatile> : std::true_type {
     using Type = R;
-    using ParamsT = Typelist<Params…>;
+    using ParamsT = Typelist<Params...>;
     static constexpr bool variadic = true;
     };
-    template<typename R, typename… Params>
-    struct IsFunctionT<R (Params…, …) &> : std::true_type {
+    template<typename R, typename... Params>
+    struct IsFunctionT<R (Params..., ...) &> : std::true_type {
     using Type = R;
-    using ParamsT = Typelist<Params…>;
+    using ParamsT = Typelist<Params...>;
     static constexpr bool variadic = true;
     };
-    template<typename R, typename… Params>
-    struct IsFunctionT<R (Params…, …) const&> : std::true_type {
+    template<typename R, typename... Params>
+    struct IsFunctionT<R (Params..., ...) const&> : std::true_type {
     using Type = R;
-    using ParamsT = Typelist<Params…>;
+    using ParamsT = Typelist<Params...>;
     static constexpr bool variadic = true;
     };
-    …
+    ...
     当所有这些都准备完毕之后，我们就可以识别除 class 类型和枚举类型之外的所有类型了。
     我们会在接下来的章节中除了这两种例外情况。
     C++标准库也提供了相应的 std::is_function<>萃取，详细介绍请参见第 D.2.1 节。
@@ -513,7 +513,156 @@ namespace ch19_8 {
         
     }
     
+    /*
+19.8.3 识别函数类型（Identifying Function Types）
+    函数类型比较有意思，因为它们除了返回类型，还可能会有任意数量的参数。因此，在匹配
+    一个函数类型的偏特化实现中，我们用一个参数包来捕获所有的参数类型，就如同我们在
+    19.3.2 节中对 DecayT 所做的那样：
+    #include "../typelist/typelist.hpp"
+    template<typename T>
+    struct IsFunctionT : std::false_type { //primary template: no function
+    };
+    template<typename R, typename... Params>
+    struct IsFunctionT<R (Params...)> : std::true_type
+    { //functions
+    using Type = R;
+    using ParamsT = Typelist<Params...>;
+    static constexpr bool variadic = false;
+    };
+    template<typename R, typename... Params>
+    struct IsFunctionT<R (Params..., ...)> : std::true_type { //variadic
+    functions
+    using Type = R;
+    using ParamsT = Typelist<Params...>;
+    static constexpr bool variadic = true;
+    };
+    上述实现中函数类型的每一部分都被暴露了出来：返回类型被 Type 标识，所有的参数都被
+    作为 ParamsT 捕获进了一个 typelist 中（在第 24 章有关于 typelist 的介绍），而可变参数（...）
+    表示的是当前函数类型使用的是不是 C 风格的可变参数。
+    不幸的是，这一形式的 IsFunctionT 并不能处理所有的函数类型，因为函数类型还可以包含
+    const 和 volatile 修饰符，以及左值或者右值引用修饰符（参见第 C.2.1 节），在 C++17 之后，
+    还有 noexcept 修饰符。比如：
+    using MyFuncType = void (int&) const;
+    这一类函数类型只有在被用于非 static 成员函数的时候才有意义，但是不管怎样都算得上是
+    函数类型。而且，被标记为 const 的函数类型并不是真正意义上的 const 类型，因此
+    五车书馆
+    238
+    RemoveConst 并不能将 const 从函数类型中移除。因此，为了识别有限制符的函数类型，我
+    们需要引入一大批额外的偏特化实现，来覆盖所有可能的限制符组合（每一个实现都需要包
+    含 C 风格和非 C 风格的可变参数情况）。这里，我们只展示所有偏特化实现中的 5 中情况：
+    template<typename R, typename... Params>
+    struct IsFunctionT<R (Params...) const> : std::true_type {
+    using Type = R;
+    using ParamsT = Typelist<Params...>;
+    static constexpr bool variadic = false;
+    };
+    template<typename R, typename... Params>
+    struct IsFunctionT<R (Params..., ...) volatile> : std::true_type {
+    using Type = R;
+    using ParamsT = Typelist<Params...>;
+    static constexpr bool variadic = true;
+    };
+    template<typename R, typename... Params>
+    struct IsFunctionT<R (Params..., ...) const volatile> : std::true_type {
+    using Type = R;
+    using ParamsT = Typelist<Params...>;
+    static constexpr bool variadic = true;
+    };
+    template<typename R, typename... Params>
+    struct IsFunctionT<R (Params..., ...) &> : std::true_type {
+    using Type = R;
+    using ParamsT = Typelist<Params...>;
+    static constexpr bool variadic = true;
+    };
+    template<typename R, typename... Params>
+    struct IsFunctionT<R (Params..., ...) const&> : std::true_type {
+    using Type = R;
+    using ParamsT = Typelist<Params...>;
+    static constexpr bool variadic = true;
+    };
+    ...
+    当所有这些都准备完毕之后，我们就可以识别除 class 类型和枚举类型之外的所有类型了。
+    我们会在接下来的章节中除了这两种例外情况。
+    C++标准库也提供了相应的 std::is_function<>萃取，详细介绍请参见第 D.2.1 节。
+     */
+    
     namespace case4 {
+        // 自己定义的类，为了消除错误提示
+        template <typename ... Types>
+        struct Typelist { };
+        
+        template<typename T>
+        struct IsFunctionT : std::false_type { };  //primary template: no function
+        
+        
+        template<typename R, typename... Params>
+        struct IsFunctionT<R (Params...)> : std::true_type { //functions
+            using Type = R;
+            using ParamsT = Typelist<Params...>;
+            static constexpr bool variadic = false;
+        };
+            
+        template<typename R, typename... Params>
+        struct IsFunctionT<R (Params..., ...)> : std::true_type { //variadic functions
+            using Type = R;
+            using ParamsT = Typelist<Params...>;
+            static constexpr bool variadic = true;
+        };
+        
+        /*
+    上述实现中函数类型的每一部分都被暴露了出来：返回类型被 Type 标识，所有的参数都被
+        作为 ParamsT 捕获进了一个 typelist 中（在第 24 章有关于 typelist 的介绍），而可变参数（...）
+        表示的是当前函数类型使用的是不是 C 风格的可变参数。
+        不幸的是，这一形式的 IsFunctionT 并不能处理所有的函数类型，因为函数类型还可以包含
+        const 和 volatile 修饰符，以及左值或者右值引用修饰符（参见第 C.2.1 节），在 C++17 之后，
+        还有 noexcept 修饰符。比如：
+        using MyFuncType = void (int&) const;
+        这一类函数类型只有在被用于非 static 成员函数的时候才有意义，但是不管怎样都算得上是
+        函数类型。而且，被标记为 const 的函数类型并不是真正意义上的 const 类型，因此
+        五车书馆
+        238
+        RemoveConst 并不能将 const 从函数类型中移除。因此，为了识别有限制符的函数类型，我
+        们需要引入一大批额外的偏特化实现，来覆盖所有可能的限制符组合（每一个实现都需要包
+        含 C 风格和非 C 风格的可变参数情况）。
+         */
+
+        template<typename R, typename... Params>
+        struct IsFunctionT<R (Params...) const> : std::true_type {
+            using Type = R;
+            using ParamsT = Typelist<Params...>;
+            static constexpr bool variadic = false;
+        };
+        
+        template<typename R, typename... Params>
+        struct IsFunctionT<R (Params..., ...) volatile> : std::true_type {
+            using Type = R;
+            using ParamsT = Typelist<Params...>;
+            static constexpr bool variadic = true;
+        };
+        
+        template<typename R, typename... Params>
+        struct IsFunctionT<R (Params..., ...) const volatile> : std::true_type {
+            using Type = R;
+            using ParamsT = Typelist<Params...>;
+            static constexpr bool variadic = true;
+        };
+        
+        template<typename R, typename... Params>
+        struct IsFunctionT<R (Params..., ...) &> : std::true_type {
+            using Type = R;
+            using ParamsT = Typelist<Params...>;
+            static constexpr bool variadic = true;
+        };
+        
+        
+        template<typename R, typename... Params>
+        struct IsFunctionT<R (Params..., ...) const&> : std::true_type {
+            using Type = R;
+            using ParamsT = Typelist<Params...>;
+            static constexpr bool variadic = true;
+        }; 
+        
+        
     }
     
     namespace case5 {
@@ -532,6 +681,10 @@ main()
 //main_Type_Classification_19_8()
 {
     ch19_8::case3::test();
+    
 
     return 0;
 }
+
+
+
