@@ -14,7 +14,7 @@ public:
 
 
 void
-func()
+func_template_stack_2_1()
 {
     shared_ptr<Test> A{new Test{ 1 }};
     map<int, shared_ptr<Test>> mp;

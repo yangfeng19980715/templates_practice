@@ -662,10 +662,89 @@ namespace ch19_8 {
             static constexpr bool variadic = true;
         }; 
         
+        void test() {
+            cout << std::is_function_v<std::function<void()>> << endl;
+        }
         
     }
     
+    /*
+19.8.4 判断 class 类型（Determining Class Types）
+    和到目前为止我们已经处理的各种复合类型不同，我们没有相应的偏特化模式来专门匹配
+    class 类型。也不能像处理基础类型一样一一列举所有的 class 类型。相反，我们需要用一种
+    间接的方法来识别 class 类型，为此我们需要找出一些适用于所有 class 类型的类型或者表达
+    式（但是不能适用于其它类型）。有着这样的类型或者表达式之后，我们就可以使用在第
+    19.4 节介绍的 SFINAE 萃取技术了。
+    Class 中可以被我们用来识别 class 类型的最为方便的特性是：只有 class 类型可以被用于指
+    向成员的指针类型（pointer-to-member types）的基础。也就是说，对于 X Y::*一类的类型结
+    构，Y 只能是 class 类型。下面的 IsClassT<>就利用了这一特性（将 X 随机选择为 int）：
+    #include <type_traits>
+    template<typename T, typename = std::void_t<>>
+    struct IsClassT : std::false_type { //primary template: by default no
+    class
+    };
+    template<typename T>
+    struct IsClassT<T, std::void_t<int T::*>> // classes can have
+    pointer-to-member
+    : std::true_type {
+    };
+    C++语言规则指出，lambda 表达式的类型是“唯一的，未命名的，非枚举 class 类型”。因
+    此在将 IsClassT 萃取用于 lambda 表达时，我们得到的结果是 true：
+    auto l = []{};
+    static_assert<IsClassT<decltype(l)>::value, "">; //succeeds
+    需要注意的是，int T::*表达式同样适用于 unit 类型（更具 C++标准，枚举类型也是 class 类
+    型）。
+    C++标准库提供了 std::is_class<>和 std::is_union 萃取，在第 D.2.1 节有关于它们的介绍。但是，
+    这些萃取需要编译期进行专门的支持，因为目前还不能通过任何核心的语言技术（standard
+    core language techniques）将 class 和 struct 从 union 类型中分辨出来。
+     */
+    
     namespace case5 {
+    
+        /*
+        Class 中可以被我们用来识别 class 类型的最为方便的特性是：只有 class 类型可以被用于指
+                向成员的指针类型（pointer-to-member types）的基础。也就是说，对于 X Y::*一类的类型结
+        构，Y 只能是 class 类型。下面的 IsClassT<>就利用了这一特性（将 X 随机选择为 int）：
+         */
+        template<typename T, typename = std::void_t<>>
+        struct IsClassT : std::false_type { //primary template: by default no class
+        };
+        
+        template<typename T>
+        struct IsClassT<T, std::void_t<int T::*>> : std::true_type { // classes can have pointer-to-member
+        };
+        
+        enum class Color {
+            RED = 0,
+            WHITE = 1
+        };
+        
+        enum Date {
+            firstDay = 0,
+            secondDay
+        };
+        
+        void test() {
+            /*
+     此处存疑，或许是错误的
+             C++语言规则指出，lambda 表达式的类型是“唯一的，未命名的，非枚举 class 类型”。
+             因此在将 IsClassT 萃取用于 lambda 表达时，我们得到的结果是 true：
+             */
+            auto lbd = []{};
+            cout << IsClassT<decltype(lbd)>::value << endl;
+            cout << IsClassT<Color>::value << endl;
+            cout << IsClassT<Date>::value << endl;
+            
+            /*
+     此处存疑，或许是错误的
+            C++标准库提供了 std::is_class<>和 std::is_union 萃取，在第 D.2.1 节有关于它们的介绍。但是，
+                这些萃取需要编译期进行专门的支持，因为目前还不能通过任何核心的语言技术（standard
+                core language techniques）将 class 和 struct 从 union 类型中分辨出来。
+             */
+            
+            cout << std::is_enum_v<Date> << endl;
+            
+        }
     
     }
     
@@ -749,11 +828,14 @@ namespace ch19_8 {
 
 }
 
+
 int
 //main()
 main_Type_Classification_19_8()
 {
-    ch19_8::case6::test();
+    // ch19_8::case6::test();
+    
+    ch19_8::case5::test();
 
     return 0;
 }
