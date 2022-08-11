@@ -19,4 +19,4 @@ add_executable(templates_practice headers.h
         chapter18/Dynamic_Polymorphism_18_1.cpp chapter18/Static_Polymorphism_18_2.cpp chapter18/Dynamic_versus_Static_Polymorphism_18_3.cpp chapter18/Using_Concepts_18_4.cpp chapter18/New_Forms_of_Design_Patterns_18_5.cpp chapter18/Generic_Programming_18_6.cpp chapter18/Afternotes_18_7.cpp
         chapter19/An_Example_Accumulating_a_Sequence_19_1.cpp chapter19/Traits_versus_Policies_and_Policy_Classes_19_2.cpp chapter19/Type_Function_19_3.cpp chapter19/SFINAE_Based_Traits_19_4.cpp chapter19/IsConvertibleT_19_5.cpp chapter19/Detecting_Members_19_6.cpp
         chapter19/Other_Traits_Techniques_19_7.cpp chapter19/Type_Classification_19_8.cpp chapter19/Policy_Traits_19_9.cpp chapter19/In_the_Standard_Library_19_10.cpp
-        chapter20/main.cpp chapter20/main.cpp)
+        chapter20/Algorithm_Specialization_20_1.cpp chapter20/Algorithm_Specialization_20_1.cpp)

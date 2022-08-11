@@ -820,14 +820,12 @@ namespace ch19_8 {
         
     }
     
-
     class Tmp {
     public:
     
     };
 
 }
-
 
 int
 //main()
