@@ -668,6 +668,79 @@ namespace ch19_8 {
     namespace case5 {
     
     }
+    
+    /*
+19.8.5 识别枚举类型（Determining Enumeration Types）
+    目前通过我们已有的萃取技术还唯一不能识别的类型是枚举类型。我们可以通过编写基于
+    SFINAE 的萃取来实现这一功能，这里首先需要测试是否可以像整形类型（比如 int）进行显
+    式转换，然后依次排除基础类型，class 类型，引用类型，指针类型，还有指向成员的指针
+    类型（这些类型都可以被转换成整形类型，但是都不是枚举类型）。但是也有更简单的方法，
+    因为我们发现所有不属于其它任何一种类型的类型就是枚举类型，这样就可以像下面这样实
+    五车书馆
+    240
+    现该萃取：
+    template<typename T>
+    struct IsEnumT {
+    static constexpr bool value = !IsFundaT<T>::value
+    && !IsPointerT<T>::value &&
+    !IsReferenceT<T>::value
+    && !IsArrayT<T>::value &&
+    !IsPointerToMemberT<T>::value
+    && !IsFunctionT<T>::value &&
+    !IsClassT<T>::value;
+    };
+    C++标准库提供了相对应的 std::is_enum<>萃取，在第 D.2.1 节有对其进行介绍。通常，为了
+    提高编译性能，编译期会直接提供这一类萃取，而不是将其实现为其它的样子。
+     */
+    
+    namespace case6 {
+        /*
+            为了消除错误提示
+         */
+        template <typename T>
+        struct IsFundaT : public false_type { };
+    
+        template <typename T>
+        struct IsPointerT : public false_type { };
+    
+        template <typename T>
+        struct IsReferenceT : public false_type { };
+    
+        template <typename T>
+        struct IsArrayT : public false_type { };
+    
+        template <typename T>
+        struct IsPointerToMemberT : public false_type { };
+    
+        template <typename T>
+        struct IsFunctionT : public false_type { };
+    
+        template <typename T>
+        struct IsClassT : public false_type { };
+        
+        template<typename T>
+        struct IsEnumT {
+            static constexpr bool value = !IsFundaT<T>::value && !IsPointerT<T>::value &&
+                                          !IsReferenceT<T>::value
+                                          && !IsArrayT<T>::value &&
+                                          !IsPointerToMemberT<T>::value
+                                          && !IsFunctionT<T>::value &&
+                                          !IsClassT<T>::value;
+        };
+        
+        enum class Color {
+            WHITE = 0,
+            BLACK = 1
+        };
+        
+        void test() {
+    
+            cout << std::is_enum_v<Color> << endl;
+            
+        }
+        
+    }
+    
 
     class Tmp {
     public:
@@ -677,11 +750,10 @@ namespace ch19_8 {
 }
 
 int
-main()
-//main_Type_Classification_19_8()
+//main()
+main_Type_Classification_19_8()
 {
-    ch19_8::case3::test();
-    
+    ch19_8::case6::test();
 
     return 0;
 }
