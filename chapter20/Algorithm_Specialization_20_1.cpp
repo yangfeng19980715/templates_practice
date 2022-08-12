@@ -151,8 +151,8 @@ namespace ch20_1 {
 }
 
 int
-main()
-//main_Algorithm_Specialization_20_1()
+//main()
+main_Algorithm_Specialization_20_1()
 {
 
     return 0;
