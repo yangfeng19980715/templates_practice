@@ -544,8 +544,8 @@ EnableIf 通常被用于函数模板的返回类型。但是，该方法不适�
 }
 
 int
-main()
-//main_Enabling_Disabling_Function_Templates_20_3()
+//main()
+main_Enabling_Disabling_Function_Templates_20_3()
 {
 
     return 0;
