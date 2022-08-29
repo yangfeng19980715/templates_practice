@@ -203,192 +203,192 @@ return x;
 
 namespace ch20_5 {
 
+  /*
+   
+   */
+  namespace case1 {
     /*
-     
+    template<typename T>
+    T const& min(T const& x, T const& y)
+    {
+      if (y < x) {
+        return y;
+      }
+      return x;
+    }
      */
-    namespace case1 {
-        /*
-        template<typename T>
-        T const& min(T const& x, T const& y)
-        {
-            if (y < x) {
-                return y;
-            }
-            return x;
-        }
-         */
-        template<typename T1, typename T2>
-        class HasLess {
-            template<typename T>
-            struct Identity;
-            
-            template<typename U1, typename U2>
-            static std::true_type test(Identity<decltype(std::declval<U1>() < std::declval<U2>())>*);
-            
-            template<typename U1, typename U2>
-            static std::false_type test(...);
-            
-        public:
-            static constexpr bool value = decltype(test<T1, T2> (nullptr))::value;
-        };
-        
-        template<typename T1, typename T2, bool HasLess>
-        class LessResultImpl {
-        public:
-            using Type = decltype(std::declval<T1>() < std::declval<T2>());
-        };
-        
-        template<typename T1, typename T2>
-        class LessResultImpl<T1, T2, false> {
-        };
-        
-        template<typename T1, typename T2>
-        class LessResultT
-                : public LessResultImpl<T1, T2, HasLess<T1, T2>::value> {
-        };
-        
-        template <bool cond, typename = void>
-        struct EnableIfT {
-            // using Type = void;
-        };
-    
-        template <typename T>
-        struct EnableIfT<true, T> {
-            using Type = T;
-        };
-        
-        template <bool cond, typename T>
-        using EnableIf = typename EnableIfT<cond, T>::Type;
-        
-        
-        template<typename T1, typename T2>
-        using LessResult = typename LessResultT<T1, T2>::Type;
-        
-        template <typename T, typename U>
-        struct IsConvertibleT : public false_type {
-            static constexpr bool value = true;
-        };
-        
-        template <typename T, typename U>
-        constexpr bool IsConvertible = IsConvertibleT<T, U>::value;
-        
-    
-        template<typename T>
-        EnableIf<IsConvertible<LessResult<T const&, T const&>, bool>, T const&>
-        min(T const& x, T const& y)
-        {
-            if (y < x)
-                return y;
-            return x;
-        }
-    
-        struct X1 { };
-        bool operator< (X1 const&, X1 const&) { return true; }
-        
-        struct X2 { };
-        bool operator<(X2, X2) { return true; }
-        
-        struct X3 { };
-        bool operator<(X3&, X3&) { return true; }
-        
-        struct X4 { };
-        
-        struct BoolConvertible {
-            operator bool() const { return true; } // implicit conversion to bool
-        };
-        
-        struct X5 { };
-        
-        BoolConvertible operator< (X5 const&, X5 const&)
-        {
-            return BoolConvertible();
-        }
-        
-        struct NotBoolConvertible { // no conversion to bool
-        };
-        
-        struct X6 { };
-        
-        NotBoolConvertible operator< (X6 const&, X6 const&)
-        {
-            return NotBoolConvertible();
-        }
-        
-        struct BoolLike {
-            explicit operator bool() const { return true; } // explicit conversion to bool
-        };
-        
-        struct X7 { };
-        BoolLike operator< (X7 const&, X7 const&) {
-            cout << "BoolLike" << endl;
-            return BoolLike();
-        }
-        
-        void test()
-        {
-            min(X1(), X1()); // X1 can be passed to min()
-            min(X2(), X2()); // X2 can be passed to min()
-            // min(X3(), X3()); // ERROR: X3 cannot be passed to min()
-            // min(X4(), X4()); // ERROR: X4 cannot be passed to min()
-            min(X5(), X5()); // X5 can be passed to min()
-            // min(X6(), X6()); // ERROR: X6 cannot be passed to min()
-            min(X7(), X7()); // UNEXPECTED ERROR: X7 cannot be passed to min()
-        }
-        
-        
-    }
-    
-    namespace case2 {
-        
-        template<typename T>
-        class IsContextualBoolT {
-        private:
-            template<typename U> struct Identity;
-            template<typename U>
-            static std::true_type test(Identity<decltype(declval<U>()? 0 : 1)>*);
-            template<typename U>
-            static std::false_type test(...);
-            
-        public:
-            static constexpr bool value = decltype(test<T> (nullptr))::value;
-        };
-        
-        template<typename T>
-        constexpr bool IsContextualBool = IsContextualBoolT<T>::value;
-    
-        template<typename T>
-        case1::EnableIf<IsContextualBool<case1::LessResult<T const&, T const&>>, T const&>
-        min(T const& x, T const& y)
-        {
-            if (y < x) {
-                return y;
-            }
-            return x;
-        }
-    }
-    
-    namespace case3 {
-    }
-    
-    namespace case4 {
-    }
-    
-    namespace case5 {
-    
-    }
-
-    class Tmp {
+    template<typename T1, typename T2>
+    class HasLess {
+      template<typename T>
+      struct Identity;
+      
+      template<typename U1, typename U2>
+      static std::true_type test(Identity<decltype(std::declval<U1>() < std::declval<U2>())>*);
+      
+      template<typename U1, typename U2>
+      static std::false_type test(...);
+      
     public:
-    
+      static constexpr bool value = decltype(test<T1, T2> (nullptr))::value;
     };
+    
+    template<typename T1, typename T2, bool HasLess>
+    class LessResultImpl {
+    public:
+      using Type = decltype(std::declval<T1>() < std::declval<T2>());
+    };
+    
+    template<typename T1, typename T2>
+    class LessResultImpl<T1, T2, false> {
+    };
+    
+    template<typename T1, typename T2>
+    class LessResultT
+        : public LessResultImpl<T1, T2, HasLess<T1, T2>::value> {
+    };
+    
+    template <bool cond, typename = void>
+    struct EnableIfT {
+      // using Type = void;
+    };
+  
+    template <typename T>
+    struct EnableIfT<true, T> {
+      using Type = T;
+    };
+    
+    template <bool cond, typename T>
+    using EnableIf = typename EnableIfT<cond, T>::Type;
+    
+    
+    template<typename T1, typename T2>
+    using LessResult = typename LessResultT<T1, T2>::Type;
+    
+    template <typename T, typename U>
+    struct IsConvertibleT : public false_type {
+      static constexpr bool value = true;
+    };
+    
+    template <typename T, typename U>
+    constexpr bool IsConvertible = IsConvertibleT<T, U>::value;
+    
+  
+    template<typename T>
+    EnableIf<IsConvertible<LessResult<T const&, T const&>, bool>, T const&>
+    min(T const& x, T const& y)
+    {
+      if (y < x)
+        return y;
+      return x;
+    }
+  
+    struct X1 { };
+    bool operator< (X1 const&, X1 const&) { return true; }
+    
+    struct X2 { };
+    bool operator<(X2, X2) { return true; }
+    
+    struct X3 { };
+    bool operator<(X3&, X3&) { return true; }
+    
+    struct X4 { };
+    
+    struct BoolConvertible {
+      operator bool() const { return true; } // implicit conversion to bool
+    };
+    
+    struct X5 { };
+    
+    BoolConvertible operator< (X5 const&, X5 const&)
+    {
+      return BoolConvertible();
+    }
+    
+    struct NotBoolConvertible { // no conversion to bool
+    };
+    
+    struct X6 { };
+    
+    NotBoolConvertible operator< (X6 const&, X6 const&)
+    {
+      return NotBoolConvertible();
+    }
+    
+    struct BoolLike {
+      explicit operator bool() const { return true; } // explicit conversion to bool
+    };
+    
+    struct X7 { };
+    BoolLike operator< (X7 const&, X7 const&) {
+      cout << "BoolLike" << endl;
+      return BoolLike();
+    }
+    
+    void test()
+    {
+      min(X1(), X1()); // X1 can be passed to min()
+      min(X2(), X2()); // X2 can be passed to min()
+      // min(X3(), X3()); // ERROR: X3 cannot be passed to min()
+      // min(X4(), X4()); // ERROR: X4 cannot be passed to min()
+      min(X5(), X5()); // X5 can be passed to min()
+      // min(X6(), X6()); // ERROR: X6 cannot be passed to min()
+      min(X7(), X7()); // UNEXPECTED ERROR: X7 cannot be passed to min()
+    }
+    
+    
+  }
+  
+  namespace case2 {
+    
+    template<typename T>
+    class IsContextualBoolT {
+    private:
+      template<typename U> struct Identity;
+      template<typename U>
+      static std::true_type test(Identity<decltype(declval<U>()? 0 : 1)>*);
+      template<typename U>
+      static std::false_type test(...);
+      
+    public:
+      static constexpr bool value = decltype(test<T> (nullptr))::value;
+    };
+    
+    template<typename T>
+    constexpr bool IsContextualBool = IsContextualBoolT<T>::value;
+  
+    template<typename T>
+    case1::EnableIf<IsContextualBool<case1::LessResult<T const&, T const&>>, T const&>
+    min(T const& x, T const& y)
+    {
+      if (y < x) {
+        return y;
+      }
+      return x;
+    }
+  }
+  
+  namespace case3 {
+  }
+  
+  namespace case4 {
+  }
+  
+  namespace case5 {
+  
+  }
+
+  class Tmp {
+  public:
+  
+  };
 
 }
 
 int
-main()
-//main_ch20_5()
+//main()
+main_ch20_5()
 {
-    ch20_5::case1::test();
+  ch20_5::case1::test();
 
-    return 0;
+  return 0;
 }

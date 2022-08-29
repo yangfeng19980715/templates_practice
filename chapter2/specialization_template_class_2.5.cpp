@@ -13,25 +13,25 @@ using namespace std;
 
 namespace ch2_5 {
 
-    template<typename T>
-    class Stack {
-    public:
-        void push(T const & element) {
-        
-        }
+  template<typename T>
+  class Stack {
+  public:
+    void push(T const & element) {
     
-    };
+    }
+  
+  };
+  
+  // 特化
+  // 对于被特化的模板，所有成员函数的定义都应该被定义成“常规”成员函数，也就是
+  // 说，所有出现T的地方，都应该被替换成用于特化类模板的类型
+  template <>
+  class Stack<int> {
+  public:
+    void push(int const & val) {
     
-    // 特化
-    // 对于被特化的模板，所有成员函数的定义都应该被定义成“常规”成员函数，也就是
-    // 说，所有出现T的地方，都应该被替换成用于特化类模板的类型
-    template <>
-    class Stack<int> {
-    public:
-        void push(int const & val) {
-        
-        }
-    };
+    }
+  };
 
 }
 
@@ -40,5 +40,5 @@ int
 main_specialization_template_class()
 {
 
-    return 0;
+  return 0;
 }

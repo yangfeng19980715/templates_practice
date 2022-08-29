@@ -15,7 +15,7 @@ void printTypeOf_2(T const & );
 template <typename T>
 void printTypeOf_2(T const & t)
 {
-    std::cout << typeid(t).name() << '\n';
+  std::cout << typeid(t).name() << '\n';
 }
 
 #endif //TEMPLATES_PRACTICE_MYSECOND_H

@@ -13,26 +13,26 @@ using namespace std;
 
 namespace nmsp {
 
-    namespace case1 {
-    }
-    
-    namespace case2 {
-    }
-    
-    namespace case3 {
-    }
-    
-    namespace case4 {
-    }
-    
-    namespace case5 {
-    
-    }
+  namespace case1 {
+  }
+  
+  namespace case2 {
+  }
+  
+  namespace case3 {
+  }
+  
+  namespace case4 {
+  }
+  
+  namespace case5 {
+  
+  }
 
-    class Tmp {
-    public:
-    
-    };
+  class Tmp {
+  public:
+  
+  };
 
 }
 
@@ -41,5 +41,5 @@ int
 main_Afternotes_18_7()
 {
 
-    return 0;
+  return 0;
 }

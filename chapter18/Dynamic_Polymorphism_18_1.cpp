@@ -30,26 +30,26 @@ using namespace std;
 
 namespace ch18_1 {
 
-    namespace case1 {
-    }
-    
-    namespace case2 {
-    }
-    
-    namespace case3 {
-    }
-    
-    namespace case4 {
-    }
-    
-    namespace case5 {
-    
-    }
+  namespace case1 {
+  }
+  
+  namespace case2 {
+  }
+  
+  namespace case3 {
+  }
+  
+  namespace case4 {
+  }
+  
+  namespace case5 {
+  
+  }
 
-    class Tmp {
-    public:
-    
-    };
+  class Tmp {
+  public:
+  
+  };
 
 }
 
@@ -58,5 +58,5 @@ int
 main_Dynamic_Polymorphism_18_1()
 {
 
-    return 0;
+  return 0;
 }

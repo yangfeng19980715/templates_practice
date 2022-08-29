@@ -12,53 +12,53 @@ using namespace std;
  */
 
 namespace ch2_6 {
-    template <typename T>
-    class stack {
-    private:
-        std::vector<T> elems;
-    public:
-        void push(T const & t) {
-        
-        }
-    
-    };
-    
-
-    template<typename T>
-    class stack<T*> {
-    private:
-        std::vector<T*> elems;
-    public:
-        void push(T const * t);
-    
-    };
-    
-    template<typename T>
-    void stack<T*>::push(const T *t) {
+  template <typename T>
+  class stack {
+  private:
+    std::vector<T> elems;
+  public:
+    void push(T const & t) {
     
     }
-    
-    /**
-     * 类模板也可以特例化多个模板参数之间的关系
-     */
-     template<typename T1, typename T2>
-     class MyClass {
-     
-     };
-    
-    // 一
-    template<typename T>
-    class MyClass<T, int> {
-    
-    };
-    
-     // 二
-    template<typename T1, typename T2>
-    class MyClass<T1*, T2*> {
-    
-    };
-    
-    
+  
+  };
+  
+
+  template<typename T>
+  class stack<T*> {
+  private:
+    std::vector<T*> elems;
+  public:
+    void push(T const * t);
+  
+  };
+  
+  template<typename T>
+  void stack<T*>::push(const T *t) {
+  
+  }
+  
+  /**
+   * 类模板也可以特例化多个模板参数之间的关系
+   */
+   template<typename T1, typename T2>
+   class MyClass {
+   
+   };
+  
+  // 一
+  template<typename T>
+  class MyClass<T, int> {
+  
+  };
+  
+   // 二
+  template<typename T1, typename T2>
+  class MyClass<T1*, T2*> {
+  
+  };
+  
+  
 }
 
 int
@@ -66,5 +66,5 @@ int
 main_partial_specialized_template_class()
 {
 
-    return 0;
+  return 0;
 }

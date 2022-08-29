@@ -12,21 +12,21 @@ using namespace std;
 
 namespace nmsp {
 
-    template <typename T, typename Cont = std::vector<T>>
-    class stack {
-    private:
-        Cont elems;
-    public:
-        void push(T const & elem);
-    
-    };
-    
-    template <typename T, typename Cont>
-    void stack<T, Cont>::push(const T &elem) {
-        elems.push_back(elem);
-    }
-    
-    
+  template <typename T, typename Cont = std::vector<T>>
+  class stack {
+  private:
+    Cont elems;
+  public:
+    void push(T const & elem);
+  
+  };
+  
+  template <typename T, typename Cont>
+  void stack<T, Cont>::push(const T &elem) {
+    elems.push_back(elem);
+  }
+  
+  
 
 }
 
@@ -35,5 +35,5 @@ int
 main_default_template_args()
 {
 
-    return 0;
+  return 0;
 }

@@ -9,5 +9,5 @@
 template <typename T>
 void printTypeOf(T const & t)
 {
-    std::cout << typeid(t).name() << '\n';
+  std::cout << typeid(t).name() << '\n';
 }
