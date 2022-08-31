@@ -1,0 +1,25 @@
+21.5 后记
+Bill Gibbons 是将 EBCO 引入 C++背后的主要推手。Nathan Myers 则使其变得更加流行，并且
+提出了一个能够很好的利用 EBCO 特性的、类似于我们的 BaseMemberPair 的模板。在 Boost
+五车书馆
+292
+库中有一个更为高端的模板（被称为 compressed_pair），其解决了我们在本章中提到的
+MyClass 模板的一些问题。Boost::compressed_pair 也可以作为 BaseMemberPair 的替代品使
+用。
+至少从 1991 年开始，CRTP 就已经被使用了。但是 Coplien 是第一个将其正式表述成一种设
+计模式的人。然后很多 CRTP 的应用就被发布了出来。短语参数化继承（parameterized
+inheritance ）有时候被错误的等同于 CRTP。如我们所展现的那样，CRTP 并不要求对派生进
+行参数化，而且某些形 式的参数化继承也不符合 CRTP 规则。有时候 CRTP 也会和
+Barton-Nackman 技术混淆，这是因为 Barton 和 Nackman 总是将 CRTP 和友元名称注入（friend
+name injection）一起使用（而后者才是 Barton-Nackman 技术的主要组成部分）。我们使用
+CRTP 和 Barton-Nackman 技术实现运算符的方式，遵照了 Boost.Operators 库中用到的基本方
+法，该库提供了大量的运算符定义。类似的，我们实现迭代器的方法也遵照了 Boost.Iterator
+库中用到的基本方法，该库为提供了一些核心迭代器运算符（相等，解引用，移动）的派生
+类提供了丰富的、符合标准库规范的迭代器接口。我们的 ObjectCounter 例子几乎和 Scott
+Meyers 在[MeyersCounting]中开发的技术相同。
+在面向对象编程中，Mixins 的概念至少在 1986 年就已经存在，它被用作一种想 OO 类中引
+入一小部分功能的方式。在 C++中将模板用于 mixins 这一方式在第一版 C++标准发布之后开
+始变得流行。从那时开始，在 C++库的设计中，它就变成了一种流行的技术。
+命名模板参数（named template arguments）被用来简化 Boost 库中的某些类模板。Boost 使
+用元编程技术创建了一种类似于 PolicySelector 的类型（但是没有使用虚继承）。这里介绍
+的一种更为简单的替代品是由我们中的一员开发的（Vandevoorde）。
