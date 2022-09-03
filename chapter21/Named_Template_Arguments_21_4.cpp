@@ -247,8 +247,8 @@ namespace ch21_4 {
 }
 
 int
-main()
-//main_ch21_4()
+//main()
+main_ch21_4()
 {
   cout << "----------------case1::test()  start---------------------" << endl;
   ch21_4::case1::test();
