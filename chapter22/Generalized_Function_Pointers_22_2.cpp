@@ -406,8 +406,8 @@ const，volatile 和引用。
 }
 
 int
-main()
-//main_ch22_2()
+//main()
+main_ch22_2()
 {
   cout << "----------------case1::test()  start---------------------" << endl;
   ch22_2::case1::test();
