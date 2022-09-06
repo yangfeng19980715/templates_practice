@@ -450,11 +450,11 @@ result += x[3]*y[3];
     {
     private:
       static constexpr unsigned den = R1::den * R2::den;
-      static constexpr unsigned num = R1::num * R2::den + R2::num *
-                                                          R1::den;
+      static constexpr unsigned num = R1::num * R2::den + R2::num * R1::den;
     public:
       typedef Ratio<num, den> Type;
     };
+    
     // using declaration for convenient usage:
     template<typename R1, typename R2>
     using RatioAdd = typename RatioAddImpl<R1, R2>::Type;
@@ -462,24 +462,26 @@ result += x[3]*y[3];
     // 然后就可以为时间段定义一个类模板，用一个任意数值类型和一个 Ratio<>实例化之后的类型作为其模板参数：
     // duration type for values of type T with unit type U:
     template<typename T, typename U = Ratio<1>>
-    class Duration {public:
+    class Duration {
+    public:
       using ValueType = T;
       using UnitType = typename U::Type;
+      
     private:
       ValueType val;
+      
     public:
-      constexpr Duration(ValueType v = 0)
-        : val(v) {
-      }
-      constexpr ValueType value() const {
-        return val;
-      }
+      constexpr Duration(ValueType v = 0) : val(v) { }
+      
+      constexpr ValueType value() const { return val; }
+      
     };
+    
     // 比较有意思的地方是对两个 Durations 求和的 operator+运算符的定义：
     // adding two durations where unit type might differ:
     template<typename T1, typename U1, typename T2, typename U2>
-    auto constexpr operator+(Duration<T1, U1> const& lhs,
-                             Duration<T2, U2> const& rhs)
+    auto
+    constexpr operator+(Duration<T1, U1> const& lhs, Duration<T2, U2> const& rhs)
     {
       // resulting type is a unit with 1 a nominator and
       // the resulting denominator of adding both unit type fractions
@@ -548,8 +550,8 @@ result += x[3]*y[3];
 }
 
 int
-main()
-//main_ch23_1()
+//main()
+main_ch23_1()
 {
   cout << "----------------case1::test()  start---------------------" << endl;
   ch23_1::case1::test();
