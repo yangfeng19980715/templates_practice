@@ -128,8 +128,8 @@ namespace ch23_2 {
 }
 
 int
-main()
-//main_ch23_2()
+//main()
+main_ch23_2()
 {
   cout << "----------------case1::test()  start---------------------" << endl;
   ch23_2::case1::test();
