@@ -91,6 +91,65 @@ Typelist<bool, signed char, short, int, long, long long>
 namespace ch24_1 {
 
   namespace case1 {
+    
+    /*
+      向类型列表中添加一个元素并不会修改原始的类型列表，只是会创建一个新的、包含了原始类型列表和新添加元素的类型列表。
+      类型列表通常是按照类模板特例的形式实现的，它将自身的内容（包含在模板参数中的类型以及类型之间的顺序）编码到了参数包中。
+      
+      一种将其内容编码到参数包中的类型列表的直接实现方式如下：
+     */
+    template<typename... Elements>
+    class Typelist {};
+  
+    // 下面是一个包含了所有有符号整型的类型列表：
+    using SignedIntegralTypes = Typelist<signed char, short, int, long, long long>;
+  
+    // 操作这个类型列表需要将其拆分，通常的做法是将第一个元素（the head）从剩余的元素中分离（the tail）。比如 Front 元函数会从类型列表中提取第一个元素：
+    template <typename List>
+    class FrontT;
+    
+    template<typename Head, typename... Tail>
+    class FrontT<Typelist<Head, Tail...>> {  // 注意这里的特化方式，如果不用这个特化，就无法使用template<typename List> using Front = typename FrontT<List>::Type;
+    public:
+      using Type = Head;
+    };
+    
+    template<typename List>
+    using Front = typename FrontT<List>::Type;  // 基于List，推断出FrontT中的模板参数head和tail
+    
+    /*
+    这样
+    FrontT<SignedIntegralTypes>::Type
+    （或者更简洁的记作 FrontT<SignedIntegralTypes>）返回的就是 signed char。同样 PopFront 元函数会
+    删除类型列表中的第一个元素。在实现上它会将类型列表中的元素分为头（head）和尾（tail）两部分，然后用尾部的元素创建一个新的 Typelist 特例。
+     */
+    template<typename List>
+    class PopFrontT;
+    
+    template<typename Head, typename... Tail>
+    class PopFrontT<Typelist<Head, Tail...>> {
+    public:
+      using Type = Typelist<Tail...>;
+    };
+    
+    template<typename List>
+    using PopFront = typename PopFrontT<List>::Type;
+    
+    /*
+      同样也可以向类型列表中添加元素，只需要将所有已经存在的元素捕获到一个参数包中，
+         然后在创建一个包含了所有元素的 TypeList 特例就行：
+     */
+    template<typename List, typename NewElement>
+    class PushFrontT;
+    
+    template<typename... Elements, typename NewElement>
+    class PushFrontT<Typelist<Elements...>, NewElement> {
+    public:
+      using Type = Typelist<NewElement, Elements...>;
+    };
+    
+    template<typename List, typename NewElement>
+    using PushFront = typename PushFrontT<List, NewElement>::Type;
   
     void test() {
       cout << "hello, world" << endl;
