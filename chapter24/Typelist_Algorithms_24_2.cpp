@@ -677,9 +677,254 @@ using Type = PushFront<PopFront<SignedIntegralTypes>, bool>;
     // generic push-back operation:
     template<typename List, typename NewElement>
     class PushBackT : public PushBackRecT<List, NewElement> { };
-    
+  
     template<typename List, typename NewElement>
     using PushBack = typename PushBackT<List, NewElement>::Type;
+  
+    /*
+      24.2.4 类型列表的反转
+当类型列表的元素之间有某种顺序的时候，对于某些算法而言，如果能够反转该顺序的话，
+事情将会变得很方便。比如在 24.1 节介绍的 SignedIntegralTypes 中元素是按整型大小的等级
+递增的。但是对其元素反转之后得到的 Typelist<long, long, long, int, short,
+signed char>可能会更有用。下面的 Reverse 算法实现了相应的元函数：
+     */
+    template<typename List, bool Empty = IsEmpty<List>::value>
+    class ReverseT;
+  
+    template<typename List>
+    using Reverse = typename ReverseT<List>::Type;
+  
+    // recursive case:
+    template<typename List>
+    class ReverseT<List, false> : public PushBackT<Reverse<PopFront<List>>, Front<List>> { };
+  
+    // basis case:
+    template<typename List>
+    class ReverseT<List, true> {
+    public:
+      using Type = List;
+    };
+  
+    // 结合 Reverse，可以实现移除列表中最后一个元素的 PopBackT 操作：
+    template<typename List>
+    class PopBackT {
+    public:
+      using Type = Reverse<PopFront<Reverse<List>>>;
+    };
+    
+    template<typename List>
+    using PopBack = typename PopBackT<List>::Type;
+    
+    /*
+     24.2.5 类型列表的转换
+之前介绍的类型列表的相关算法允许我们从类型列表中提取任意元素，在类型列表中做查
+找，构建新的列表以及反转列表。但是我们还需要对类型列表中的元素执行一些其它的操作。
+比如可能希望对类型列表中的所有元素做某种转换，例如通过 AddConst 给列表中的元素加
+上 const 修饰符：
+     */
+
+    template<typename T>
+    struct AddConstT {
+      using Type = T const;
+    };
+    
+    template<typename T>
+    using AddConst = typename AddConstT<T>::Type;
+    
+    /*
+     为了实现这一目的，相应的算法应该接受一个类型列表和一个元函数作为参数，并返回一个
+      将该元函数作用于类型列表中每个元素之后，得到的新的类型列表。比如：Transform<SignedIntegralTypes, AddConstT>
+     
+     返回的是一个包含了 signed char const, short const, int const, long const和 long long const 的类型列表。
+     元函数被以模板参数模板（参见 5.7 节）的形式提供，它负责将一种类型转换为另一种类型。Transform 算法本身和预期的一样是一个递归算法：
+     */
+    template< typename List,
+              template<typename T> class MetaFun,
+              bool Empty = IsEmpty<List>::value
+            >
+    class TransformT;
+    
+    // recursive case:
+    template<typename List, template<typename T> class MetaFun>
+    class TransformT<List, MetaFun, false> :
+      public PushFrontT<typename TransformT<PopFront<List>, MetaFun>::Type,
+                        typename MetaFun<Front<List>>::Type
+                        > {};
+    
+    // basis case:
+    template<typename List, template<typename T> class MetaFun>
+    class TransformT<List, MetaFun, true> {
+    public:
+      using Type = List;
+    };
+    
+    template<typename List, template<typename T> class MetaFun>
+    using Transform = typename TransformT<List, MetaFun>::Type;
+    
+    /*
+      此处的递归情况虽然句法比较繁琐，但是依然很直观。最终转换的结果是第一个元素的转换结果，加上对剩余元素执行执行递归转换后的结果。
+     */
+    
+    /*
+     24.2.6 类型列表的累加（Accumulating Typelists）
+转换（Transform）算法在需要对类型列表中的元素做转换时很有帮助。通常将它和累加
+（Accumulate）算法一起使用，它会将类型列表中的所有元素组合成一个值。Accumulate 算
+法以一个包含元素 T1，T2，...，TN 的类型列表 T，一个初始类型 I，和一个接受两个类型作
+为参数的元函数 F 为参数，并最终返回一个类型。它的返回值是 F (F (F (…F(I, T1),
+T2), …, TN−1), TN )，其中在第 ith 步，F 将作用于前 i-1 步的结果以及 Ti。
+取决于具体的类型列表，F 的选择以及初始值 I 的选择，可以通过 Accumulate 产生各种不
+同的输出。比如如果 F 可以被用来在两种类型中选择较大的那一个，Accumulate 的行为就和
+LargestType 差不多。而如果 F 接受一个类型列表和一个类型作为参数，并且将类型追加到类
+型列表的后面，其行为又和 Reverse 算法差不多。
+Accumulate 的实现方式遵循了标准的递归元编程模式：
+     */
+    template<typename List,                             // 类型列表 T
+             template<typename X, typename Y> class F,  // 元函数 F
+             typename I,                                // 初始类型 I
+             bool = IsEmpty<List>::value
+            >
+    class AccumulateT;
+    
+    // recursive case:
+    template<typename List,
+            template<typename X, typename Y> class F,
+            typename I
+            >
+    class AccumulateT<List, F, I, false>
+      : public AccumulateT<PopFront<List>, F, typename F<I, Front<List>>::Type> {};
+    
+    // basis case:
+    template< typename List,
+              template<typename X, typename Y> class F,
+              typename I
+            >
+    class AccumulateT<List, F, I, true> {
+    public:
+      using Type = I;
+    };
+    
+    template< typename List,
+              template<typename X, typename Y> class F,
+              typename I
+            >
+    using Accumulate = typename AccumulateT<List, F, I>::Type;
+  
+    // 有了 Accumulate，就可以通过将 PushFrontT 作为元函数 F，将空的类型列表（TypeList<T>） 作为初始类型 I，反转一个类型列表：
+    using Result = Accumulate<SignedIntegralTypes, PushFrontT, Typelist<>>;      // produces TypeList<long long, long, int, short, signed char>
+  
+    // 如果要实现基于 Accumulate 的 LargestType（称之为 LargestTypeAcc），还需要做一些额外的工作，因为首先要实现一个返回两种类型中类型较大的那一个的元函数：
+    
+    template <bool cond, typename T, typename U>
+    using IfThenElseT = std::conditional<cond, T, U>;
+    
+    template<typename T, typename U>
+    class LargerTypeT : public IfThenElseT<sizeof(T) >= sizeof(U), T, U> { };
+    
+    template<typename Typelist>
+    class LargestTypeAccT_old : public AccumulateT<PopFront<Typelist>, LargerTypeT, Front<Typelist>> { };
+    
+    template<typename Typelist>
+    using LargestTypeAcc_old = typename LargestTypeAccT_old<Typelist>::Type;
+    
+    /*
+    值得注意的是，由于这一版的 LargestType 将类型列表的第一个元素当作初始类型，因此其输入不能为空。
+     我们可以显式地处理空列表的情况，要么是返回一个哨兵类型（char 或者 void），要么让该算法很好的支持 SFINASE，就如同 19.4.4 节讨论的那样：
+     */
+    
+    template<typename Typelist, bool = IsEmpty<Typelist>::value>
+    class LargestTypeAccT;
+    
+    template<typename Typelist>
+    class LargestTypeAccT<Typelist, false> : public AccumulateT<PopFront<Typelist>, LargerTypeT, Front<Typelist>> { };
+    
+    template<typename Typelist>
+    class LargestTypeAccT<Typelist, true> { };
+    
+    template<typename Typelist>
+    using LargestTypeAcc = typename LargestTypeAccT<Typelist>::Type;
+    // Accumulate 是一个非常强大的类型列表算法，利用它可以实现很多种操作，因此可以将其看作类型列表操作相关的基础算法。
+  
+    /*
+    24.2.7 插入排序
+      作为最后一个类型列表相关的算法，我们来介绍插入排序。和其它算法类似，其递归过程会
+      将类型列表分成第一个元素（Head）和剩余的元素（Tail）。然后对 Tail 进行递归排序，并
+      将 Head 插入到排序后的类型列表中的合适的位置。该算法的实现如下：
+      */
+    template< typename List,
+              template<typename T, typename U> class Compare,
+              bool = IsEmpty<List>::value
+            >
+    class InsertionSortT;
+    
+    template< typename List,
+              template<typename T, typename U> class Compare
+            >
+    using InsertionSort = typename InsertionSortT<List, Compare>::Type;
+    
+    
+    /*
+      在对类型列表进行排序时，参数 Compare 被用来作比较。它接受两个参数并通过其 value 成员返回一个布尔值。
+      将其用来处理空列表的情况会稍嫌繁琐。
+      
+      插入排序算法的核心时元函数 InsertSortedT，它将一个值插入到一个已经排序的列表中（插入到第一个可能的位置）并保持列表依然有序：
+     */
+    template< typename List,
+              typename Element,
+              template<typename T, typename U> class Compare,
+              bool = IsEmpty<List>::value>
+    class InsertSortedT;
+    
+    /*
+    // recursive case:
+    template< typename List,
+              typename Element,
+              template<typename T, typename U> class Compare>
+    class InsertSortedT<List, Element, Compare, false> {
+      // compute the tail of the resulting list:
+      using NewTail = typename std::conditional<Compare<Element, Front<List>>::value, IdentityT<List>, InsertSortedT<PopFront<List>, Element, Compare>>::Type;
+      
+      // compute the head of the resulting list:
+      using NewHead = std::conditional<Compare<Element, Front<List>>::value, Element, Front<List>>;
+      
+    public:
+      using Type = PushFront<NewTail, NewHead>;
+    };
+    
+    // basis case:
+    template< typename List,
+              typename Element,
+              template<typename T, typename U> class Compare>
+    class InsertSortedT<List, Element, Compare, true> : public PushFrontT<List, Element> {};
+    
+    template<typename List,
+             typename Element,
+             template<typename T, typename U> class Compare>
+    using InsertSorted = typename InsertSortedT<List, Element, Compare>::Type;
+  
+    template<typename T, typename U>
+    struct SmallerThanT {
+      static constexpr bool value = sizeof(T) < sizeof(U);
+    };
+    
+    // recursive case (insert first element into sorted list):
+    template<typename List, template<typename T, typename U> class Compare>
+    class InsertionSortT<List, Compare, false>
+      : public InsertSortedT<InsertionSort<PopFront<List>, Compare>, Front<List>, Compare> {};
+    
+    // basis case (an empty list is sorted):
+    template<typename List, template<typename T, typename U> class Compare>
+    class InsertionSortT<List, Compare, true> {
+    public:
+      using Type = List;
+    };
+    
+    void testInsertionSort()
+    {
+      using Types = Typelist<int, char, short, double>;
+      using ST = InsertionSort<Types, SmallerThanT>;
+      std::cout << std::is_same<ST,Typelist<char, short, int, double>>::value << std::endl;
+    }
+     */
     
     
     void test() {
@@ -728,8 +973,8 @@ using Type = PushFront<PopFront<SignedIntegralTypes>, bool>;
 }
 
 int
-main()
-//main_ch24_2()
+//main()
+main_ch24_2()
 {
   cout << "----------------case1::test()  start---------------------" << endl;
   ch24_2::case1::test();
