@@ -13,6 +13,8 @@
 #include <type_traits>
 #include <list>
 #include <atomic>
+#include <string>
+#include <any>
 #include <thread>
 #include <mutex>
 #include <set>
