@@ -86,6 +86,88 @@ namespace ch24_4 {
       using Type = Typelist<typename MetaFun<Elements>::Type...>;
     };
   
+    /*
+    也可以基于索引值从一个已有列表中选择一些元素，并生成新的列表。
+     Select 元函数接受一个类型列表和一个存储索引值的 Valuelist 作为参数，并最终生成一个包含了被索引元素的新的类型列表：
+      */
+    template<typename Types, typename Indices>
+    class SelectT;
+    
+    template <typename T, T... Args>
+    struct Valuelist { };
+  
+    template<typename List>
+    class FrontT;
+  
+    template<typename Head, typename... Tail>
+    class FrontT<Typelist<Head, Tail...>> {  // 注意这里的特化方式，如果不用这个特化，就无法使用template<typename List> using Front = typename FrontT<List>::Type;
+    public:
+      using Type = Head;
+    };
+  
+    template<typename List>
+    using Front = typename FrontT<List>::Type;  // 基于List，推断出FrontT中的模板参数head和tail
+  
+    template<typename List>
+    class PopFrontT;
+  
+    template<typename Head, typename... Tail>
+    class PopFrontT<Typelist<Head, Tail...>> {
+    public:
+      using Type = Typelist<Tail...>;
+    };
+  
+    template<typename List>
+    using PopFront = typename PopFrontT<List>::Type;
+  
+    template<typename List, typename NewElement>
+    class PushFrontT;
+  
+    template<typename... Elements, typename NewElement>
+    class PushFrontT<Typelist<Elements...>, NewElement> {
+    public:
+      using Type = Typelist<NewElement, Elements...>;
+    };
+  
+    template<typename List, typename NewElement>
+    using PushFront = typename PushFrontT<List, NewElement>::Type;
+  
+    // recursive case:
+    template<typename List, unsigned N>  // 这里的继承会一路展开，直到 N-1 == 0
+    class NthElementT : public NthElementT<PopFront<List>, N - 1> {
+    };
+  
+    // basis case:
+    template<typename List>
+    class NthElementT<List, 0> : public FrontT<List> {
+    };
+  
+    template<typename List, unsigned N>
+    using NthElement = typename NthElementT<List, N>::Type;
+  
+    template<typename Types, unsigned... Indices>
+  
+    class SelectT<Types, Valuelist < unsigned, Indices...>> {
+      public:
+      using Type = Typelist<NthElement < Types, Indices>...>;
+    };
+    
+    template<typename Types, typename Indices>
+    using Select = typename SelectT<Types, Indices>::Type;
+  
+    // 索引值被捕获进参数包 Indices 中，它被扩展成一串指向已有类型列表的 NthElement 类型，并生成一个新的类型列表。
+    // 下面的代码展示了一种通过 Select 反转类型列表的方法：
+    using SignedIntegralTypes = Typelist<signed char, short, int, long, long long>;
+    
+    // produces Typelist<long long, long, int, short, signed char>
+    using ReversedSignedIntegralTypes = Select<SignedIntegralTypes, Valuelist<unsigned, 4, 3, 2, 1, 0>>;
+    
+    /*
+    一个包含了指向另一个列表的索引的非类型类型列表，
+     通常被称为索引列表（index list，或者索引序列，index sequence），可以通过它来简化甚至省略掉递归计算。
+     在第 25.3.4 节会对索引列表进行详细介绍。
+      */
+  
     void test() {
       cout << "hello, world" << endl;
     }
@@ -132,8 +214,8 @@ namespace ch24_4 {
 }
 
 int
-main()
-//main_ch24_4()
+//main()
+main_ch24_4()
 {
   cout << "----------------case1::test()  start---------------------" << endl;
   ch24_4::case1::test();
