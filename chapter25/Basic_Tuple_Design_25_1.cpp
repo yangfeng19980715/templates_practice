@@ -186,6 +186,12 @@ namespace ch25_1 {
     
     template<typename... Types>
     class Tuple;
+  
+    // basis case:
+    template<>
+    class Tuple<> {
+      // no storage required
+    };
 
     // recursive case:
     template<typename Head, typename... Tail>
@@ -208,7 +214,7 @@ namespace ch25_1 {
       Tuple(Head const& head, Tail const&... tail) : head(head), tail(tail...) { }
   
       // 这样就可以像下面这样初始化一个元组了：
-      // Tuple<int, double, std::string> t(17, 3.14, "Hello, World!");
+      //Tuple<int, double, std::string> t(17, 3.14, "Hello, World!");
       
       /*
       不过这并不是最通用的接口：用户可能会希望用移动构造（move-construct）来初始化元组
@@ -231,11 +237,11 @@ namespace ch25_1 {
     一个元组去初始化另一个元组的构造函数模板。为了解决这一问题，就需要用到 6.3 节介绍
     的 std::enable_if<>，在 tail 的长度与预期不同的时候就禁用相关模板：
        */
-      template<typename VHead, typename... VTail, typename = std::enable_if_t<sizeof... (VTail)==sizeof... (Tail)>>
-      Tuple(VHead&& vhead, VTail&&... vtail) : head(std::forward<VHead>(vhead)), tail(std::forward<VTail>(vtail)...) { }
+      template<typename VHead, typename... VTail, typename = std::enable_if_t<sizeof... (VTail) == sizeof... (Tail)>>
+      Tuple(VHead &&vhead, VTail &&... vtail) : head(std::forward<VHead>(vhead)), tail(std::forward<VTail>(vtail)...) {}
   
-      template<typename VHead, typename... VTail, typename = std::enable_if_t<sizeof... (VTail)==sizeof... (Tail)>>
-      Tuple(Tuple<VHead, VTail...> const& other) : head(other.getHead()), tail(other.getTail()) { }
+      template<typename VHead, typename... VTail, typename = std::enable_if_t<sizeof... (VTail) == sizeof... (Tail)>>
+      Tuple(Tuple<VHead, VTail...> const &other) : head(other.getHead()), tail(other.getTail()) {}
       
       Head &getHead() { return head; }
       
@@ -246,11 +252,6 @@ namespace ch25_1 {
       Tuple<Tail...> const &getTail() const { return tail; }
     };
 
-    // basis case:
-    template<>
-    class Tuple<> {
-      // no storage required
-    };
   
     /*
     在递归情况下，Tuple 的实例包含一个存储了列表首元素的 head，以及一个存储了列表剩余
@@ -313,6 +314,7 @@ namespace ch25_1 {
     // basis case:
     bool operator==(Tuple<> const&, Tuple<> const&) {
       // empty tuples are always equivalentreturn true;
+      return true;
     }
     
     // recursive case:
@@ -351,9 +353,80 @@ namespace ch25_1 {
       return strm;
     }
     
-    void test() {
+    /*
+      25.3.1 将元组用作类型列表
+      如果我们忽略掉 Tuple 模板在运行期间的相关部分，可以发现它在结构上和第 24 章介绍的
+      Typelist 完全一样：都接受任意数量的模板类型参数。事实上，通过使用一些部分特例化，
+      可以将 Tuple 变成一个功能完整的 Typelist
+     */
+    template<typename T>
+    struct IsEmpty;
+    
+    // determine whether the tuple is empty:
+    template<>
+    struct IsEmpty<Tuple<>> {
+      static constexpr bool value = true;
+    };
+    
+    template<typename Head, typename... Tail>
+    class FrontT ;
+    
+    
+    // extract front element:
+    template<typename Head, typename... Tail>
+    class FrontT<Tuple<Head, Tail...>> {
+    public:
+        using Type = Head;
+    };
+  
+    template<typename Head, typename... Tail>
+    class PopFrontT;
+    
+    // remove front element:
+    template<typename Head, typename... Tail>
+    class PopFrontT<Tuple<Head, Tail...>> {
+    public:
+      using Type = Tuple<Tail...>;
+    };
+    
+    template <typename Head, typename ...Tail>
+    using PopFront = typename PopFrontT<Head, Tail...>::Type;
+  
+    template<typename Types, typename Element>
+    class PushFrontT;
+    
+    // add element to the front:
+    template<typename... Types, typename Element>
+    class PushFrontT<Tuple<Types...>, Element> {
+    public:
+      using Type = Tuple<Element, Types...>;
+    };
+  
+    template<typename Types, typename Element>
+    class PushBackT;
+    
+    // add element to the back:
+    template<typename... Types, typename Element>
+    class PushBackT<Tuple<Types...>, Element> {
+    public:
+      using Type = Tuple<Types..., Element>;
+    };
+    
+    template <typename Types, typename Element>
+    using PushBack = typename PushBackT<Types, Element>::Type;
+  
+    void test_1() {
+      // 现在，所有在第 24 章开发的 typlist 算法都既适用于 Tuple 也适用于 Typelist，这样就可以很方便的处理元组的类型了。比如：
+      Tuple<int, double, std::string> t1(17, 3.14, "Hello, World!");
+      using T2 = PopFront<PushBack<decltype(t1), bool>>;
+      T2 t2(get<1>(t1), get<2>(t1), true);
+      // std::cout << t2; // 会打印出： (3.14, Hello, World!, 1)
+      // 很快就会看到，将 typelist 算法用于 tuple，通常是为了确定 tuple 算法返回值的类型。
       std::cout << makeTuple(1, 2.5, std::string("hello")) << '\n';
-      // cout << "hello, world" << endl;
+    }
+    
+    void test() {
+      test_1();
     }
     
   }
