@@ -360,7 +360,9 @@ namespace ch25_1 {
       可以将 Tuple 变成一个功能完整的 Typelist
      */
     template<typename T>
-    struct IsEmpty;
+    struct IsEmpty {
+      static constexpr bool value = false;
+    };
     
     // determine whether the tuple is empty:
     template<>
@@ -378,6 +380,9 @@ namespace ch25_1 {
     public:
         using Type = Head;
     };
+    
+    template <typename tuple>
+    using Front = typename FrontT<tuple>::Type;
   
     template<typename Head, typename... Tail>
     class PopFrontT;
@@ -401,6 +406,9 @@ namespace ch25_1 {
     public:
       using Type = Tuple<Element, Types...>;
     };
+    
+    template <typename Types, typename Element>
+    using PushFront = typename PushFrontT<Types, Element>::Type;
   
     template<typename Types, typename Element>
     class PushBackT;
@@ -425,8 +433,182 @@ namespace ch25_1 {
       std::cout << makeTuple(1, 2.5, std::string("hello")) << '\n';
     }
     
+    /*
+     25.3.2 添加以及删除元素
+      对于 Tuple，能否向其头部或者尾部添加元素，对开发相关的高阶算法而言是很重要的。和
+      typelist 的情况一样，向头部插入一个元素要远比向尾部插入一个元素要简单，因此我们从
+      pushFront 开始：
+     */
+    template<typename... Types, typename V>
+    PushFront<Tuple<Types...>, V> pushFront(Tuple<Types...> const& tuple, V const& value) {
+      return PushFront<Tuple<Types...>, V>(value, tuple);
+    }
+    
+    /*
+     将一个新元素（称之为 value）添加到一个已有元组的头部，需要生成一个新的、以 value
+    为 head、以已有 tuple 为 tail 的元组。返回结过的类型是 Tuple<V, Types...>。不过这里我们
+    选择使用 typelist 的算法 PushFront 来获得返回类型，这样做可以体现出 tuple 算法中编译期
+    部分和运行期部分之间的紧密耦合关系：编译期的 PushFront 计算出了我们应该生成的运行
+    期结果的类型。
+    将一个新元素添加到一个已有元组的末尾则会复杂得多，因为这需要遍历一个元组。注意下
+    面的代码中 pushBack()的实现方式，是如何参考了第 24.2.3 节中类型列表的 PushBack()的递归实现方式的：
+     
+     不能像PushFront那样简单实现的原因： Tuple没有相关的构造函数。
+     */
+  
+    // basis case
+    template<typename V>
+    Tuple<V> pushBack(Tuple<> const&, V const& value) {
+      return Tuple<V>(value);
+    }
+    
+    // recursive case
+    template<typename Head, typename... Tail, typename V>
+    Tuple<Head, Tail..., V>
+    pushBack(Tuple<Head, Tail...> const& tuple, V const& value) {
+      return Tuple<Head, Tail..., V>(tuple.getHead(), pushBack(tuple.getTail(), value));
+    }
+  
+    /*
+    对于基本情况，和预期的一样，会将值追加到一个长度为零的元组的后面。对于递归情况，
+    则将元组分为 head 和 tail 两部分，然后将首元素以及将新元素追加到 tail 的后面得到结果组
+      装成最终的结果。虽然这里我们使用的返回值类型是 Tuple<Head, Tail..., V> ，但是它和编译
+      期的 PushBack<Tuple<Hrad, Tail...>, V>是一样的。
+    同样地，popFront()也很容易实现：
+     */
+    template<typename... Types>
+    PopFront<Tuple<Types...>> popFront(Tuple<Types...> const& tuple) {
+      return tuple.getTail();
+    }
+    
+    void test_2() {
+      // 现在我们可以像下面这样编写第 25.3.1 节的例子：
+      Tuple<int, double, std::string> t1(17, 3.14, "Hello, World!");
+      auto t2 = popFront(pushBack(t1, true));
+      std::cout << std::boolalpha << t2 << '\n';
+      // 打印结果为： (3.14, Hello, World!, true)
+      
+    }
+    
+  
+    template<typename List, bool Empty = IsEmpty<List>::value>
+    class ReverseT;
+  
+    template<typename List>
+    using Reverse = typename ReverseT<List>::Type;
+  
+    // recursive case:
+    template<typename List>
+    class ReverseT<List, false> : public PushBackT<Reverse<PopFront<List>>, Front<List>> {
+    };
+  
+    // basis case:
+    template<typename List>
+    class ReverseT<List, true> {
+    public:
+      using Type = List;
+    };
+    
+    // 结合 Reverse，可以实现移除列表中最后一个元素的 PopBackT 操作：
+    template<typename List>
+    class PopBackT {
+    public:
+      using Type = Reverse<PopFront<Reverse<List>>>;
+    };
+    
+    template<typename List>
+    using PopBack = typename PopBackT<List>::Type;
+    
+    /*
+    25.3.3 元组的反转
+      元组的反转可以采用另一种递归的、类似在第 24.2.4 节介绍的、类型列表的反转方式实现：
+      */
+    
+    // basis case
+    Tuple<> reverse(Tuple<> const& t) {
+      return t;
+    }
+    
+    // recursive case
+    template<typename Head, typename... Tail>
+    Reverse<Tuple<Head, Tail...>> reverse(Tuple<Head, Tail...> const& t) {
+      return pushBack(reverse(t.getTail()), t.getHead());
+    }
+    
+    /*
+    基本情况比较简单，而递归情况则是递归地将 head 追加到反转之后的 tail 的后面。也就是说：
+    reverse(makeTuple(1, 2.5, std::string("hello")))
+    会生成一个包含了 string(“hello”)，2.5，和 1 的类型为 Tuple<string, double, int>的元组。
+    和类型列表类似，现在就可以简单地通过先反转元组，然后调用 popFront()，然后再次反转元组实现 popBack():
+      */
+    template<typename... Types>
+    PopBack<Tuple<Types...>> popBack(Tuple<Types...> const &tuple) {
+      return reverse(popFront(reverse(tuple)));
+    }
+  
+    /*
+    25.3.4 索引列表
+      虽然上文中反转元组用到的递归方式是正确的，但是它在运行期间的效率却非常低。为了展
+      现这一问题，引入下面这个可以计算其实例被 copy 次数的类：
+      */
+    template<int N>
+    struct CopyCounter
+    {
+      inline static unsigned numCopies = 0;
+      
+      CopyCounter() { }
+      
+      CopyCounter(CopyCounter const&) {
+        ++numCopies;
+      }
+    };
+  
+    // 然后创建并反转一个包含了 CopyCounter 实例的元组：
+    void copycountertest() {
+      Tuple<CopyCounter<0>, CopyCounter<1>, CopyCounter<2>, CopyCounter<3>, CopyCounter<4>> copies;
+      auto reversed = reverse(copies);
+      std::cout << "0: " << CopyCounter<0>::numCopies << " copies\n";
+      std::cout << "1: " << CopyCounter<1>::numCopies << " copies\n";
+      std::cout << "2: " << CopyCounter<2>::numCopies << " copies\n";
+      std::cout << "3: " << CopyCounter<3>::numCopies << " copies\n";
+      std::cout << "4: " << CopyCounter<4>::numCopies << " copies\n";
+    }
+    
+    /*
+     这确实进行了很多次 copy！在理想的实现中，反转一个元组时，每一个元素只应该被 copy
+一次：从其初始位置直接被 copy 到目的位置。我们可以通过使用引用来达到这一目的，包
+括对中间变量的类型使用引用，但是这样做会使实现变得很复杂。
+在反转元组时，为了避免不必要的 copy，考虑一下我们该如何实现一个一次性的算法，来反转一个简单的、长度已知的元组（比如包含 5 个元素）。
+     可以像下面这样只是简单地使用makeTuple()和 get():
+    auto reversed = makeTuple(get<4>(copies), get<3>(copies), get<2>(copies), get<1>(copies), get<0>(copies));
+     */
+    void copycountertest_2() {
+      Tuple<CopyCounter<0>, CopyCounter<1>, CopyCounter<2>, CopyCounter<3>, CopyCounter<4>> copies;
+      auto reversed = makeTuple(get<4>(copies), get<3>(copies), get<2>(copies), get<1>(copies), get<0>(copies));
+      std::cout << "0: " << CopyCounter<0>::numCopies << " copies\n";
+      std::cout << "1: " << CopyCounter<1>::numCopies << " copies\n";
+      std::cout << "2: " << CopyCounter<2>::numCopies << " copies\n";
+      std::cout << "3: " << CopyCounter<3>::numCopies << " copies\n";
+      std::cout << "4: " << CopyCounter<4>::numCopies << " copies\n";
+    }
+    
+    /*
+     索引列表（亦称索引序列，参见第 24.4 节）通过将一组元组的索引捕获进一个参数包，推
+      广了上述概念，本例中的索引列表是 4，3，2，1，0，这样就可以通过包展开进行一组 get
+      函数的调用。采用这种方法可以将索引列表的计算（可以采用任意复杂度的模板源程序）和
+      使用（更关注运行期的性能）分离开。在 C++14 中引入的标准类型 std::integer_sequence，
+      通常被用来表示索引列表。
+     */
+    
     void test() {
+      cout << "test_1: " << endl;
       test_1();
+      cout << "test_2: " << endl;
+      test_2();
+      // cout << "copycountertest: " << endl;
+      // copycountertest();
+      cout << "copycountertest_2: " << endl;
+      copycountertest_2();
     }
     
   }
