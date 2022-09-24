@@ -15,6 +15,7 @@
 #include <atomic>
 #include <string>
 #include <any>
+#include <complex>
 #include <thread>
 #include <mutex>
 #include <set>

@@ -23,4 +23,4 @@ add_executable(templates_practice headers.h
     chapter22/Function_Objects_Pointers_and_std_function_22_1.cpp chapter22/Generalized_Function_Pointers_22_2.cpp chapter22/Bridge_Interface_22_3.cpp chapter22/Optional_Bridging_22_5.cpp
     chapter23/The_State_of_Modern_C++_Meta_programmin_23_1.cpp chapter23/The_Dimensions_of_Reflective_Meta_programming_23_2.cpp chapter23/The_Cost_of_Recursive_Instantiation_23_3.cpp chapter23/Computational_Completeness_23_4.cpp chapter23/Recursive_Instantiation_versus_Recursive_Template_Arguments_23_5.cpp chapter23/Enumeration_Values_versus_Static_Constants_23_6.cpp chapter23/Afternotes_23_7.cpp
     chapter24/Anatomy_of_a_Typelist_24_1.cpp chapter24/Typelist_Algorithms_24_2.cpp chapter24/Nontype_Typelists_24_3.cpp chapter24/Optimizing_Algorithms_with_Pack_Expansions_24_4.cpp chapter24/Cons_style_Typelists_24_5.cpp
-        chapter25/Basic_Tuple_Design_25_1.cpp chapter25/Basic_Tuple_Operations_25_2.cpp chapter25/Tuple_Algorithms_25_3.cpp)
+        chapter25/Basic_Tuple_Design_25_1.cpp chapter25/Basic_Tuple_Operations_25_2.cpp chapter25/Tuple_Algorithms_25_3.cpp chapter25/25_5.cpp)
